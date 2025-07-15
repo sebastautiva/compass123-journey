@@ -1,0 +1,400 @@
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
+import { Badge } from '@/components/ui/badge';
+import { Calendar } from '@/components/ui/calendar';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { format } from 'date-fns';
+import { 
+  CalendarIcon,
+  MapPin,
+  Clock,
+  Users,
+  Download,
+  Save,
+  CheckCircle,
+  AlertCircle
+} from 'lucide-react';
+import { caminoRoutes, findRouteById } from '../data/camino-routes';
+import { UserItinerary } from '../types/camino';
+import { useToast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
+
+const paceOptions = [
+  { value: 'relaxed', label: 'Relaxed (15-20km/day)', description: 'Plenty of time to explore and rest' },
+  { value: 'moderate', label: 'Moderate (20-25km/day)', description: 'Balanced pace with good progress' },
+  { value: 'active', label: 'Active (25-30km/day)', description: 'Faster pace, more ground covered' }
+];
+
+const accommodationOptions = [
+  { value: 'budget', label: 'Budget (€10-20/night)', description: 'Albergues and hostels' },
+  { value: 'comfort', label: 'Comfort (€30-60/night)', description: 'Private rooms and small hotels' },
+  { value: 'premium', label: 'Premium (€60+/night)', description: 'Hotels and luxury accommodations' }
+];
+
+export const PlannerPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const { toast } = useToast();
+  const [itinerary, setItinerary] = useState<Partial<UserItinerary>>({
+    name: '',
+    startDate: '',
+    endDate: '',
+    pace: 'moderate',
+    accommodationPreference: 'comfort',
+    restDays: [],
+    notes: ''
+  });
+  
+  const [selectedRoute, setSelectedRoute] = useState<string>('');
+  const [startDate, setStartDate] = useState<Date>();
+  const [endDate, setEndDate] = useState<Date>();
+  const [isSaving, setIsSaving] = useState(false);
+
+  useEffect(() => {
+    const routeParam = searchParams.get('route');
+    if (routeParam) {
+      setSelectedRoute(routeParam);
+      setItinerary(prev => ({ ...prev, route: findRouteById(routeParam) }));
+    }
+  }, [searchParams]);
+
+  const route = selectedRoute ? findRouteById(selectedRoute) : null;
+  const estimatedDays = route ? Math.ceil(route.distance / (itinerary.pace === 'relaxed' ? 17.5 : itinerary.pace === 'moderate' ? 22.5 : 27.5)) : 0;
+
+  const handleSave = async () => {
+    if (!route || !startDate || !itinerary.name) {
+      toast({
+        title: 'Missing Information',
+        description: 'Please fill in all required fields.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    setIsSaving(true);
+    
+    try {
+      const finalItinerary: UserItinerary = {
+        id: Date.now().toString(),
+        name: itinerary.name,
+        route: route,
+        startDate: startDate.toISOString(),
+        endDate: endDate?.toISOString() || '',
+        pace: itinerary.pace as 'relaxed' | 'moderate' | 'active',
+        accommodationPreference: itinerary.accommodationPreference as 'budget' | 'comfort' | 'premium',
+        restDays: itinerary.restDays || [],
+        customizations: [],
+        notes: itinerary.notes || '',
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+
+      // Save to localStorage
+      const existingItineraries = JSON.parse(localStorage.getItem('camino-itineraries') || '[]');
+      existingItineraries.push(finalItinerary);
+      localStorage.setItem('camino-itineraries', JSON.stringify(existingItineraries));
+      
+      toast({
+        title: 'Itinerary Saved!',
+        description: 'Your Camino plan has been saved successfully.',
+      });
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to save itinerary. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleExportPDF = () => {
+    // Simple text export for now
+    const exportData = `
+CAMINO ITINERARY
+================
+
+Pilgrimage Name: ${itinerary.name}
+Route: ${route?.name}
+Distance: ${route?.distance}km
+Estimated Duration: ${estimatedDays} days
+Pace: ${itinerary.pace}
+Accommodation Preference: ${itinerary.accommodationPreference}
+
+Start Date: ${startDate ? format(startDate, 'PP') : 'Not set'}
+End Date: ${endDate ? format(endDate, 'PP') : 'Not set'}
+
+Route Description:
+${route?.description}
+
+Best Months: ${route?.bestMonths.join(', ')}
+
+Highlights:
+${route?.highlights.map(h => `• ${h}`).join('\n')}
+
+Notes:
+${itinerary.notes}
+
+Generated by Camino Companion
+${new Date().toLocaleString()}
+    `;
+
+    const blob = new Blob([exportData], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `camino-itinerary-${itinerary.name?.replace(/\s+/g, '-') || 'plan'}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  return (
+    <div className="space-y-8">
+      <div className="text-center space-y-4">
+        <h1 className="text-4xl font-playfair font-bold">
+          Plan Your Camino Journey
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          Create a personalized itinerary that matches your pace, preferences, and travel style.
+        </p>
+      </div>
+
+      <div className="grid lg:grid-cols-3 gap-8">
+        {/* Planning Form */}
+        <div className="lg:col-span-2 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <MapPin className="h-5 w-5 mr-2 text-camino-gold" />
+                Basic Information
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="name">Pilgrimage Name</Label>
+                  <Input
+                    id="name"
+                    placeholder="My Camino Journey"
+                    value={itinerary.name}
+                    onChange={(e) => setItinerary(prev => ({ ...prev, name: e.target.value }))}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="route">Route</Label>
+                  <Select value={selectedRoute} onValueChange={setSelectedRoute}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a route" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {caminoRoutes.map((route) => (
+                        <SelectItem key={route.id} value={route.id}>
+                          {route.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label>Start Date</Label>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button
+                        variant="outline"
+                        className={cn(
+                          "w-full justify-start text-left font-normal",
+                          !startDate && "text-muted-foreground"
+                        )}
+                      >
+                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        {startDate ? format(startDate, "PPP") : <span>Pick a date</span>}
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={startDate}
+                        onSelect={setStartDate}
+                        initialFocus
+                        className="p-3 pointer-events-auto"
+                      />
+                    </PopoverContent>
+                  </Popover>
+                </div>
+                <div>
+                  <Label>End Date (Optional)</Label>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button
+                        variant="outline"
+                        className={cn(
+                          "w-full justify-start text-left font-normal",
+                          !endDate && "text-muted-foreground"
+                        )}
+                      >
+                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        {endDate ? format(endDate, "PPP") : <span>Pick a date</span>}
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={endDate}
+                        onSelect={setEndDate}
+                        initialFocus
+                        className="p-3 pointer-events-auto"
+                      />
+                    </PopoverContent>
+                  </Popover>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Clock className="h-5 w-5 mr-2 text-camino-gold" />
+                Travel Preferences
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <Label htmlFor="pace">Walking Pace</Label>
+                <Select value={itinerary.pace} onValueChange={(value) => setItinerary(prev => ({ ...prev, pace: value as 'relaxed' | 'moderate' | 'active' }))}>
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {paceOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        <div>
+                          <div className="font-medium">{option.label}</div>
+                          <div className="text-sm text-muted-foreground">{option.description}</div>
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <Label htmlFor="accommodation">Accommodation Preference</Label>
+                <Select value={itinerary.accommodationPreference} onValueChange={(value) => setItinerary(prev => ({ ...prev, accommodationPreference: value as 'budget' | 'comfort' | 'premium' }))}>
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {accommodationOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        <div>
+                          <div className="font-medium">{option.label}</div>
+                          <div className="text-sm text-muted-foreground">{option.description}</div>
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <Label htmlFor="notes">Additional Notes</Label>
+                <Textarea
+                  id="notes"
+                  placeholder="Any special requirements, dietary restrictions, or personal notes..."
+                  value={itinerary.notes}
+                  onChange={(e) => setItinerary(prev => ({ ...prev, notes: e.target.value }))}
+                  className="min-h-[100px]"
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Summary Panel */}
+        <div className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <CheckCircle className="h-5 w-5 mr-2 text-camino-gold" />
+                Itinerary Summary
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {route ? (
+                <>
+                  <div className="space-y-2">
+                    <h3 className="font-semibold">{route.name}</h3>
+                    <p className="text-sm text-muted-foreground">{route.description}</p>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-muted-foreground">Distance:</span>
+                      <p className="font-medium">{route.distance}km</p>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground">Est. Duration:</span>
+                      <p className="font-medium">{estimatedDays} days</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <span className="text-muted-foreground text-sm">Best Months:</span>
+                    <div className="flex flex-wrap gap-1">
+                      {route.bestMonths.map((month) => (
+                        <Badge key={month} variant="outline" className="text-xs">
+                          {month}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <span className="text-muted-foreground text-sm">Difficulty:</span>
+                    <Badge variant="secondary">{route.difficulty}</Badge>
+                  </div>
+                </>
+              ) : (
+                <div className="flex items-center text-muted-foreground">
+                  <AlertCircle className="h-4 w-4 mr-2" />
+                  <span>Select a route to see summary</span>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          <div className="space-y-3">
+            <Button
+              onClick={handleSave}
+              disabled={!route || !startDate || !itinerary.name || isSaving}
+              className="w-full bg-camino-gold hover:bg-camino-gold/90 text-camino-gold-foreground"
+            >
+              <Save className="h-4 w-4 mr-2" />
+              {isSaving ? 'Saving...' : 'Save Itinerary'}
+            </Button>
+            
+            <Button
+              onClick={handleExportPDF}
+              variant="outline"
+              disabled={!route || !startDate || !itinerary.name}
+              className="w-full"
+            >
+              <Download className="h-4 w-4 mr-2" />
+              Export as Text
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
