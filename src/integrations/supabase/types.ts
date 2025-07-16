@@ -14,16 +14,210 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      quotations: {
+        Row: {
+          accommodation_preference: string | null
+          admin_notes: string | null
+          created_at: string
+          email: string
+          end_date: string | null
+          full_name: string
+          id: string
+          number_of_people: number
+          phone: string | null
+          quote_details: string | null
+          quoted_at: string | null
+          route_id: string
+          special_requirements: string | null
+          start_date: string | null
+          status: string
+          total_price: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          accommodation_preference?: string | null
+          admin_notes?: string | null
+          created_at?: string
+          email: string
+          end_date?: string | null
+          full_name: string
+          id?: string
+          number_of_people: number
+          phone?: string | null
+          quote_details?: string | null
+          quoted_at?: string | null
+          route_id: string
+          special_requirements?: string | null
+          start_date?: string | null
+          status?: string
+          total_price?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          accommodation_preference?: string | null
+          admin_notes?: string | null
+          created_at?: string
+          email?: string
+          end_date?: string | null
+          full_name?: string
+          id?: string
+          number_of_people?: number
+          phone?: string | null
+          quote_details?: string | null
+          quoted_at?: string | null
+          route_id?: string
+          special_requirements?: string | null
+          start_date?: string | null
+          status?: string
+          total_price?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      route_stages: {
+        Row: {
+          accommodations: Json | null
+          created_at: string
+          description: string | null
+          detailed_description: string | null
+          difficulty: string
+          distance: number
+          elevation_gain: number | null
+          elevation_loss: number | null
+          end_point: string
+          estimated_time: string | null
+          id: string
+          images: string[] | null
+          map_url: string | null
+          name: string
+          points_of_interest: string[] | null
+          route_id: string
+          services: Json | null
+          stage_number: number
+          start_point: string
+          terrain_type: string | null
+          updated_at: string
+          warnings: string[] | null
+        }
+        Insert: {
+          accommodations?: Json | null
+          created_at?: string
+          description?: string | null
+          detailed_description?: string | null
+          difficulty: string
+          distance: number
+          elevation_gain?: number | null
+          elevation_loss?: number | null
+          end_point: string
+          estimated_time?: string | null
+          id?: string
+          images?: string[] | null
+          map_url?: string | null
+          name: string
+          points_of_interest?: string[] | null
+          route_id: string
+          services?: Json | null
+          stage_number: number
+          start_point: string
+          terrain_type?: string | null
+          updated_at?: string
+          warnings?: string[] | null
+        }
+        Update: {
+          accommodations?: Json | null
+          created_at?: string
+          description?: string | null
+          detailed_description?: string | null
+          difficulty?: string
+          distance?: number
+          elevation_gain?: number | null
+          elevation_loss?: number | null
+          end_point?: string
+          estimated_time?: string | null
+          id?: string
+          images?: string[] | null
+          map_url?: string | null
+          name?: string
+          points_of_interest?: string[] | null
+          route_id?: string
+          services?: Json | null
+          stage_number?: number
+          start_point?: string
+          terrain_type?: string | null
+          updated_at?: string
+          warnings?: string[] | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["user_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["user_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["user_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _user_id: string
+          _role: Database["public"]["Enums"]["user_role"]
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      user_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +344,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      user_role: ["admin", "user"],
+    },
   },
 } as const

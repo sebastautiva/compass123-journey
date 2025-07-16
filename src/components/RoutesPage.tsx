@@ -117,11 +117,11 @@ export const RoutesPage: React.FC = () => {
                       View Details
                     </Button>
                   </Link>
-                  <Link to={`/planner?route=${route.id}`} className="flex-1">
+                  <Link to={`/routes/${route.id}`} className="flex-1">
                     <Button 
-                      className="w-full bg-camino-gold hover:bg-camino-gold/90 text-camino-gold-foreground"
+                      className="w-full bg-primary hover:bg-primary/90"
                     >
-                      Plan This Route
+                      Request Quote
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>

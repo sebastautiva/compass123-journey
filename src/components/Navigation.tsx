@@ -23,6 +23,7 @@ const navigationItems = [
   { path: '/passport', icon: BookOpen, label: 'Passport' },
   { path: '/tips', icon: Notebook, label: 'Tips & Guide' },
   { path: '/support', icon: HelpCircle, label: 'Support' },
+  { path: '/auth', icon: LogOut, label: 'Sign In' },
 ];
 
 export const Navigation: React.FC = () => {
