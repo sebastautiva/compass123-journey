@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,13 +13,15 @@ import {
   Mountain,
   Waves,
   TreePine,
-  Church
+  Church,
+  Anchor
 } from 'lucide-react';
 import { caminoRoutes } from '../data/camino-routes';
 
 const routeIcons = {
   'camino-frances': Mountain,
   'camino-portugues': Waves,
+  'camino-portugues-coastal': Anchor,
   'camino-del-norte': TreePine,
   'camino-primitivo': Church
 };
@@ -31,17 +34,17 @@ const difficultyColors = {
 };
 
 export const RoutesPage: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedRoute, setSelectedRoute] = useState<string | null>(null);
 
   return (
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-playfair font-bold">
-          Choose Your Camino Route
+          {t('routes.title')}
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Each route offers unique experiences, landscapes, and challenges. 
-          Select the one that speaks to your heart and fits your abilities.
+          {t('routes.subtitle')}
         </p>
       </div>
 
@@ -68,7 +71,7 @@ export const RoutesPage: React.FC = () => {
                     variant="secondary" 
                     className={`${difficultyColors[route.difficulty]} text-white`}
                   >
-                    {route.difficulty}
+                    {t(`routes.difficulty.${route.difficulty}`)}
                   </Badge>
                 </div>
               </CardHeader>
@@ -80,11 +83,11 @@ export const RoutesPage: React.FC = () => {
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="flex items-center">
                     <MapPin className="h-4 w-4 mr-2 text-camino-gold" />
-                    <span>{route.distance}km</span>
+                    <span>{route.distance}{t('routes.details.km')}</span>
                   </div>
                   <div className="flex items-center">
                     <Clock className="h-4 w-4 mr-2 text-camino-gold" />
-                    <span>{route.estimatedDays} days</span>
+                    <span>{route.estimatedDays} {t('routes.details.days')}</span>
                   </div>
                   <div className="flex items-center">
                     <TrendingUp className="h-4 w-4 mr-2 text-camino-gold" />
@@ -92,12 +95,12 @@ export const RoutesPage: React.FC = () => {
                   </div>
                   <div className="flex items-center">
                     <Calendar className="h-4 w-4 mr-2 text-camino-gold" />
-                    <span>{route.bestMonths.slice(0, 2).join(', ')}</span>
+                    <span>{t('routes.details.bestMonths')}: {route.bestMonths.slice(0, 2).join(', ')}</span>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-sm">Highlights:</h4>
+                  <h4 className="font-semibold text-sm">{t('routes.details.highlights')}:</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
                     {route.highlights.slice(0, 3).map((highlight, index) => (
                       <li key={index} className="flex items-start">
@@ -114,14 +117,14 @@ export const RoutesPage: React.FC = () => {
                       variant="outline" 
                       className="w-full hover:bg-secondary"
                     >
-                      View Details
+                      {t('routes.details.viewDetails')}
                     </Button>
                   </Link>
                   <Link to={`/routes/${route.id}`} className="flex-1">
                     <Button 
                       className="w-full bg-primary hover:bg-primary/90"
                     >
-                      Request Quote
+                      {t('routes.details.requestQuote')}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
@@ -134,21 +137,19 @@ export const RoutesPage: React.FC = () => {
 
       <div className="bg-muted/50 rounded-lg p-8">
         <h2 className="text-2xl font-playfair font-semibold mb-4">
-          Need Help Choosing?
+          {t('routes.help.title')}
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <h3 className="font-semibold mb-2">For First-Time Pilgrims</h3>
+            <h3 className="font-semibold mb-2">{t('routes.help.firstTime')}</h3>
             <p className="text-muted-foreground text-senior">
-              The <strong>Camino Francés</strong> is recommended for its excellent infrastructure, 
-              international community, and well-marked paths.
+              {t('routes.help.firstTimeDesc')}
             </p>
           </div>
           <div>
-            <h3 className="font-semibold mb-2">For Coastal Lovers</h3>
+            <h3 className="font-semibold mb-2">{t('routes.help.coastal')}</h3>
             <p className="text-muted-foreground text-senior">
-              The <strong>Camino Português</strong> offers beautiful coastal sections 
-              and charming Portuguese culture with easier terrain.
+              {t('routes.help.coastalDesc')}
             </p>
           </div>
         </div>
@@ -156,7 +157,7 @@ export const RoutesPage: React.FC = () => {
         <div className="mt-6 text-center">
           <Link to="/support">
             <Button variant="outline" className="text-senior">
-              Get Personal Recommendations
+              {t('routes.help.getRecommendations')}
             </Button>
           </Link>
         </div>

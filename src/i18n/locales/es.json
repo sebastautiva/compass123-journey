@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "routes": "Rutas",
+    "planner": "Planificador",
+    "passport": "Pasaporte",
+    "tips": "Consejos",
+    "support": "Soporte",
+    "dashboard": "Panel",
+    "admin": "Admin",
+    "login": "Iniciar Sesión",
+    "logout": "Cerrar Sesión"
+  },
+  "routes": {
+    "title": "Elige tu Ruta del Camino",
+    "subtitle": "Cada ruta ofrece experiencias, paisajes y desafíos únicos. Selecciona la que hable a tu corazón y se adapte a tus capacidades.",
+    "difficulty": {
+      "Easy": "Fácil",
+      "Moderate": "Moderado",
+      "Challenging": "Desafiante", 
+      "Difficult": "Difícil"
+    },
+    "details": {
+      "distance": "Distancia",
+      "days": "días",
+      "km": "km",
+      "bestMonths": "Mejores meses",
+      "highlights": "Destacados",
+      "viewDetails": "Ver Detalles",
+      "requestQuote": "Solicitar Presupuesto",
+      "stageByStage": "Etapa por Etapa",
+      "stageNumber": "Etapa",
+      "elevation": "Desnivel",
+      "terrain": "Terreno",
+      "estimatedTime": "Tiempo Estimado",
+      "accommodations": "Alojamientos",
+      "services": "Servicios",
+      "warnings": "Notas Importantes",
+      "ascent": "Subida",
+      "descent": "Bajada",
+      "highest": "Punto Más Alto",
+      "lowest": "Punto Más Bajo"
+    },
+    "help": {
+      "title": "¿Necesitas Ayuda para Elegir?",
+      "firstTime": "Para Peregrinos Primerizos",
+      "firstTimeDesc": "El Camino Francés es recomendado por su excelente infraestructura, comunidad internacional y senderos bien señalizados.",
+      "coastal": "Para Amantes de la Costa",
+      "coastalDesc": "El Camino Português ofrece hermosas secciones costeras y encantadora cultura portuguesa con terreno más fácil.",
+      "getRecommendations": "Obtener Recomendaciones Personales"
+    },
+    "variants": {
+      "napoleonRoute": "Ruta Napoleón (Verano)",
+      "valcarlosRoute": "Ruta Valcarlos (Invierno)",
+      "centralRoute": "Ruta Central",
+      "coastalRoute": "Ruta Costera",
+      "spiritualVariant": "Variante Espiritual",
+      "hospitalesVariant": "Variante Hospitales"
+    }
+  },
+  "quotation": {
+    "title": "Solicitar Presupuesto",
+    "subtitle": "Cuéntanos sobre tu experiencia ideal del Camino y crearemos un presupuesto personalizado para ti.",
+    "form": {
+      "fullName": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono (opcional)",
+      "route": "Ruta Seleccionada",
+      "startDate": "Fecha de Inicio Preferida",
+      "endDate": "Fecha de Fin Preferida",
+      "numberOfPeople": "Número de Personas",
+      "accommodation": "Preferencia de Alojamiento",
+      "accommodationOptions": {
+        "budget": "Económico (Albergues)",
+        "comfort": "Confort (Hoteles/Hostales)",
+        "premium": "Premium (Hoteles)"
+      },
+      "specialRequirements": "Requisitos Especiales",
+      "submit": "Solicitar Presupuesto"
+    },
+    "success": "¡Solicitud de presupuesto enviada con éxito! Te contactaremos en 24 horas.",
+    "error": "Error al enviar la solicitud de presupuesto. Por favor inténtalo de nuevo."
+  }
+}

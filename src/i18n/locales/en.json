@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Home",
+    "routes": "Routes",
+    "planner": "Planner",
+    "passport": "Passport",
+    "tips": "Tips",
+    "support": "Support",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "routes": {
+    "title": "Choose Your Camino Route",
+    "subtitle": "Each route offers unique experiences, landscapes, and challenges. Select the one that speaks to your heart and fits your abilities.",
+    "difficulty": {
+      "Easy": "Easy",
+      "Moderate": "Moderate", 
+      "Challenging": "Challenging",
+      "Difficult": "Difficult"
+    },
+    "details": {
+      "distance": "Distance",
+      "days": "days",
+      "km": "km",
+      "bestMonths": "Best months",
+      "highlights": "Highlights",
+      "viewDetails": "View Details",
+      "requestQuote": "Request Quote",
+      "stageByStage": "Stage by Stage",
+      "stageNumber": "Stage",
+      "elevation": "Elevation",
+      "terrain": "Terrain",
+      "estimatedTime": "Estimated Time",
+      "accommodations": "Accommodations",
+      "services": "Services",
+      "warnings": "Important Notes",
+      "ascent": "Ascent",
+      "descent": "Descent",
+      "highest": "Highest Point",
+      "lowest": "Lowest Point"
+    },
+    "help": {
+      "title": "Need Help Choosing?",
+      "firstTime": "For First-Time Pilgrims",
+      "firstTimeDesc": "The Camino Francés is recommended for its excellent infrastructure, international community, and well-marked paths.",
+      "coastal": "For Coastal Lovers", 
+      "coastalDesc": "The Camino Português offers beautiful coastal sections and charming Portuguese culture with easier terrain.",
+      "getRecommendations": "Get Personal Recommendations"
+    },
+    "variants": {
+      "napoleonRoute": "Napoleon Route (Summer)",
+      "valcarlosRoute": "Valcarlos Route (Winter)",
+      "centralRoute": "Central Route",
+      "coastalRoute": "Coastal Route",
+      "spiritualVariant": "Spiritual Variant",
+      "hospitalesVariant": "Hospitales Variant"
+    }
+  },
+  "quotation": {
+    "title": "Request a Quote",
+    "subtitle": "Tell us about your ideal Camino experience and we'll create a personalized quote for you.",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "route": "Selected Route",
+      "startDate": "Preferred Start Date",
+      "endDate": "Preferred End Date", 
+      "numberOfPeople": "Number of People",
+      "accommodation": "Accommodation Preference",
+      "accommodationOptions": {
+        "budget": "Budget (Albergues)",
+        "comfort": "Comfort (Hotels/Hostels)",
+        "premium": "Premium (Hotels)"
+      },
+      "specialRequirements": "Special Requirements",
+      "submit": "Request Quote"
+    },
+    "success": "Quote request submitted successfully! We'll contact you within 24 hours.",
+    "error": "Error submitting quote request. Please try again."
+  }
+}
