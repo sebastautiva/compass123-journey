@@ -80,5 +80,136 @@
     },
     "success": "¡Solicitud de presupuesto enviada con éxito! Te contactaremos en 24 horas.",
     "error": "Error al enviar la solicitud de presupuesto. Por favor inténtalo de nuevo."
+  },
+  "home": {
+    "hero": {
+      "title": "Tu Camino de Ensueño Te Espera",
+      "subtitle": "Descubre el viaje espiritual de tu vida con rutas del Camino personalizadas adaptadas a tus necesidades.",
+      "cta": "Comenzar Tu Viaje"
+    },
+    "features": {
+      "planning": {
+        "title": "Planificación Experta",
+        "description": "Rutas personalizadas basadas en tus habilidades e intereses"
+      },
+      "support": {
+        "title": "Soporte 24/7",
+        "description": "Ayuda antes, durante y después de tu peregrinación"
+      },
+      "accommodation": {
+        "title": "Alojamientos Premium",
+        "description": "Alojamientos seleccionados para cada comodidad y presupuesto"
+      }
+    }
+  },
+  "auth": {
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "email": "Dirección de Correo",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "forgotPassword": "¿Olvidaste la contraseña?",
+    "dontHaveAccount": "¿No tienes una cuenta?",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "signInWith": "Iniciar sesión con",
+    "or": "o",
+    "loading": "Cargando...",
+    "welcome": "Bienvenido de nuevo",
+    "createAccount": "Crear Cuenta",
+    "enterEmail": "Ingresa tu dirección de correo",
+    "enterPassword": "Ingresa tu contraseña",
+    "errors": {
+      "invalidCredentials": "Credenciales inválidas",
+      "emailRequired": "El correo es requerido",
+      "passwordRequired": "La contraseña es requerida",
+      "passwordMismatch": "Las contraseñas no coinciden",
+      "emailInUse": "El correo ya está en uso",
+      "weakPassword": "La contraseña es muy débil"
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "close": "Cerrar",
+    "submit": "Enviar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "select": "Seleccionar",
+    "all": "Todos",
+    "none": "Ninguno"
+  },
+  "dashboard": {
+    "title": "Mi Panel",
+    "welcome": "Bienvenido de nuevo",
+    "quotations": {
+      "title": "Mis Solicitudes de Presupuesto",
+      "status": {
+        "pending": "Pendiente",
+        "quoted": "Presupuestado",
+        "accepted": "Aceptado",
+        "completed": "Completado"
+      }
+    },
+    "profile": {
+      "title": "Perfil",
+      "updateProfile": "Actualizar Perfil"
+    }
+  },
+  "support": {
+    "title": "Soporte y Ayuda",
+    "subtitle": "Estamos aquí para ayudarte con tu viaje del Camino",
+    "contact": {
+      "title": "Contáctanos",
+      "description": "¿Tienes preguntas? Nuestro equipo experto está aquí para ayudar."
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "question1": "¿Cuál es la mejor época para caminar el Camino?",
+      "answer1": "La mejor época depende de tu ruta elegida. Generalmente, abril-junio y septiembre-octubre son ideales para la mayoría de rutas.",
+      "question2": "¿Qué tan difícil es el Camino?",
+      "answer2": "La dificultad varía según la ruta. El Camino Francés es amigable para principiantes, mientras que el Camino del Norte es más desafiante."
+    }
+  },
+  "tips": {
+    "title": "Consejos y Recomendaciones del Camino",
+    "subtitle": "Consejos expertos para una peregrinación exitosa",
+    "categories": {
+      "preparation": "Preparación",
+      "packing": "Equipaje",
+      "health": "Salud",
+      "safety": "Seguridad",
+      "cultural": "Cultural",
+      "spiritual": "Espiritual"
+    }
+  },
+  "passport": {
+    "title": "Pasaporte del Peregrino",
+    "subtitle": "Sigue tu viaje del Camino y colecciona sellos",
+    "stamps": "Sellos",
+    "route": "Ruta",
+    "startDate": "Fecha de Inicio",
+    "addStamp": "Agregar Sello",
+    "location": "Ubicación",
+    "date": "Fecha",
+    "notes": "Notas"
+  },
+  "planner": {
+    "title": "Planificador de Viaje",
+    "subtitle": "Planifica tu viaje perfecto del Camino",
+    "selectRoute": "Seleccionar Ruta",
+    "customizeItinerary": "Personalizar Itinerario",
+    "addRestDays": "Agregar Días de Descanso",
+    "accommodationLevel": "Nivel de Alojamiento",
+    "generatePlan": "Generar Plan"
   }
 }

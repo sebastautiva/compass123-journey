@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -59,6 +60,7 @@ const difficultyColors = {
 export const RouteDetailPage: React.FC = () => {
   const { routeId } = useParams<{ routeId: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [route, setRoute] = useState<any>(null);
   const [stages, setStages] = useState<RouteStage[]>([]);
   const [loading, setLoading] = useState(true);
@@ -112,8 +114,8 @@ export const RouteDetailPage: React.FC = () => {
     
     if (!user) {
       toast({
-        title: "Authentication Required",
-        description: "Please sign in to request a quotation",
+        title: t('auth.errors.emailRequired'),
+        description: t('quotation.form.email'),
         variant: "destructive"
       });
       navigate('/auth');

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
@@ -13,60 +14,58 @@ import {
   Compass
 } from 'lucide-react';
 
-const features = [
-  {
-    icon: MapPin,
-    title: 'Expert Route Planning',
-    description: 'Detailed stage-by-stage guidance for all major Camino routes, tailored for mature travelers.'
-  },
-  {
-    icon: Clock,
-    title: 'Flexible Pacing',
-    description: 'Customize your journey with rest days and comfortable daily distances that suit your needs.'
-  },
-  {
-    icon: Users,
-    title: 'Senior-Friendly Focus',
-    description: 'Specially designed for travelers aged 50+ with comfort-focused accommodations and tips.'
-  },
-  {
-    icon: Heart,
-    title: 'Meaningful Experience',
-    description: 'Connect with the spiritual and cultural heart of the Camino de Santiago.'
-  }
-];
-
-const testimonials = [
-  {
-    name: 'Margaret Thompson',
-    age: 67,
-    location: 'San Francisco, CA',
-    text: 'This app made planning my Camino so much easier. The senior-friendly tips were invaluable.',
-    rating: 5
-  },
-  {
-    name: 'Robert Chen',
-    age: 59,
-    location: 'Austin, TX',
-    text: 'Perfect pacing suggestions and comfortable accommodations. Exactly what I needed.',
-    rating: 5
-  }
-];
-
 export const HomePage: React.FC = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: MapPin,
+      title: t('home.features.planning.title'),
+      description: t('home.features.planning.description')
+    },
+    {
+      icon: Clock,
+      title: 'Flexible Pacing',
+      description: 'Customize your journey with rest days and comfortable daily distances that suit your needs.'
+    },
+    {
+      icon: Users,
+      title: 'Senior-Friendly Focus',
+      description: 'Specially designed for travelers aged 50+ with comfort-focused accommodations and tips.'
+    },
+    {
+      icon: Heart,
+      title: t('home.features.support.title'),
+      description: t('home.features.support.description')
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: 'Margaret Thompson',
+      age: 67,
+      location: 'San Francisco, CA',
+      text: 'This app made planning my Camino so much easier. The senior-friendly tips were invaluable.',
+      rating: 5
+    },
+    {
+      name: 'Robert Chen',
+      age: 59,
+      location: 'Austin, TX',
+      text: 'Perfect pacing suggestions and comfortable accommodations. Exactly what I needed.',
+      rating: 5
+    }
+  ];
   return (
     <div className="space-y-16">
       {/* Hero Section */}
       <section className="text-center space-y-8 py-12">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-playfair font-bold text-foreground mb-6">
-            Walk with Purpose.
-            <br />
-            <span className="text-camino-gold">Travel with Peace.</span>
+            {t('home.hero.title')}
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover the transformative journey of the Camino de Santiago, 
-            thoughtfully planned for retired travelers seeking meaningful adventure.
+            {t('home.hero.subtitle')}
           </p>
         </div>
         
@@ -76,7 +75,7 @@ export const HomePage: React.FC = () => {
               size="lg" 
               className="bg-camino-gold hover:bg-camino-gold/90 text-camino-gold-foreground text-xl px-8 py-6 rounded-full hover-lift"
             >
-              Plan My Camino
+              {t('home.hero.cta')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

@@ -1,0 +1,215 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "routes": "Routen",
+    "planner": "Planer",
+    "passport": "Pilgerausweis",
+    "tips": "Tipps",
+    "support": "Unterstützung",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "login": "Anmelden",
+    "logout": "Abmelden"
+  },
+  "routes": {
+    "title": "Wählen Sie Ihre Camino-Route",
+    "subtitle": "Jede Route bietet einzigartige Erfahrungen, Landschaften und Herausforderungen. Wählen Sie die Route, die zu Ihrem Herzen spricht und Ihren Fähigkeiten entspricht.",
+    "difficulty": {
+      "Easy": "Einfach",
+      "Moderate": "Mittelschwer",
+      "Challenging": "Herausfordernd",
+      "Difficult": "Schwierig"
+    },
+    "details": {
+      "distance": "Entfernung",
+      "days": "Tage",
+      "km": "km",
+      "bestMonths": "Beste Monate",
+      "highlights": "Höhepunkte",
+      "viewDetails": "Details ansehen",
+      "requestQuote": "Angebot anfordern",
+      "stageByStage": "Etappe für Etappe",
+      "stageNumber": "Etappe",
+      "elevation": "Höhenprofil",
+      "terrain": "Gelände",
+      "estimatedTime": "Geschätzte Zeit",
+      "accommodations": "Unterkünfte",
+      "services": "Dienstleistungen",
+      "warnings": "Wichtige Hinweise",
+      "ascent": "Aufstieg",
+      "descent": "Abstieg",
+      "highest": "Höchster Punkt",
+      "lowest": "Niedrigster Punkt"
+    },
+    "help": {
+      "title": "Brauchen Sie Hilfe bei der Auswahl?",
+      "firstTime": "Für Erstpilger",
+      "firstTimeDesc": "Der Camino Francés wird für seine ausgezeichnete Infrastruktur, internationale Gemeinschaft und gut markierten Wege empfohlen.",
+      "coastal": "Für Küstenliebhaber",
+      "coastalDesc": "Der Camino Português bietet wunderschöne Küstenabschnitte und charmante portugiesische Kultur mit einfacherem Gelände.",
+      "getRecommendations": "Persönliche Empfehlungen erhalten"
+    },
+    "variants": {
+      "napoleonRoute": "Napoleon-Route (Sommer)",
+      "valcarlosRoute": "Valcarlos-Route (Winter)",
+      "centralRoute": "Zentrale Route",
+      "coastalRoute": "Küstenroute",
+      "spiritualVariant": "Spirituelle Variante",
+      "hospitalesVariant": "Hospitales-Variante"
+    }
+  },
+  "quotation": {
+    "title": "Angebot anfordern",
+    "subtitle": "Erzählen Sie uns von Ihrer idealen Camino-Erfahrung und wir erstellen ein personalisiertes Angebot für Sie.",
+    "form": {
+      "fullName": "Vollständiger Name",
+      "email": "E-Mail",
+      "phone": "Telefon (optional)",
+      "route": "Ausgewählte Route",
+      "startDate": "Bevorzugtes Startdatum",
+      "endDate": "Bevorzugtes Enddatum",
+      "numberOfPeople": "Anzahl der Personen",
+      "accommodation": "Unterkunftspräferenz",
+      "accommodationOptions": {
+        "budget": "Budget (Herbergen)",
+        "comfort": "Komfort (Hotels/Hostels)",
+        "premium": "Premium (Hotels)"
+      },
+      "specialRequirements": "Besondere Anforderungen",
+      "submit": "Angebot anfordern"
+    },
+    "success": "Angebotsanfrage erfolgreich gesendet! Wir werden Sie innerhalb von 24 Stunden kontaktieren.",
+    "error": "Fehler beim Senden der Angebotsanfrage. Bitte versuchen Sie es erneut."
+  },
+  "home": {
+    "hero": {
+      "title": "Ihr Traumhafter Camino Wartet",
+      "subtitle": "Entdecken Sie die spirituelle Reise Ihres Lebens mit maßgeschneiderten Camino-Routen, die auf Ihre Bedürfnisse zugeschnitten sind.",
+      "cta": "Ihre Reise beginnen"
+    },
+    "features": {
+      "planning": {
+        "title": "Expertenplanung",
+        "description": "Personalisierte Routen basierend auf Ihren Fähigkeiten und Interessen"
+      },
+      "support": {
+        "title": "24/7 Unterstützung",
+        "description": "Hilfe vor, während und nach Ihrer Pilgerreise"
+      },
+      "accommodation": {
+        "title": "Erstklassige Unterkünfte",
+        "description": "Handverlesene Unterkünfte für jeden Komfort und jedes Budget"
+      }
+    }
+  },
+  "auth": {
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "forgotPassword": "Passwort vergessen?",
+    "dontHaveAccount": "Noch kein Konto?",
+    "alreadyHaveAccount": "Bereits ein Konto?",
+    "signInWith": "Anmelden mit",
+    "or": "oder",
+    "loading": "Lädt...",
+    "welcome": "Willkommen zurück",
+    "createAccount": "Konto erstellen",
+    "enterEmail": "Geben Sie Ihre E-Mail-Adresse ein",
+    "enterPassword": "Geben Sie Ihr Passwort ein",
+    "errors": {
+      "invalidCredentials": "Ungültige Anmeldedaten",
+      "emailRequired": "E-Mail ist erforderlich",
+      "passwordRequired": "Passwort ist erforderlich",
+      "passwordMismatch": "Passwörter stimmen nicht überein",
+      "emailInUse": "E-Mail wird bereits verwendet",
+      "weakPassword": "Passwort ist zu schwach"
+    }
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "view": "Ansehen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Vorherige",
+    "close": "Schließen",
+    "submit": "Senden",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "sort": "Sortieren",
+    "select": "Auswählen",
+    "all": "Alle",
+    "none": "Keine"
+  },
+  "dashboard": {
+    "title": "Mein Dashboard",
+    "welcome": "Willkommen zurück",
+    "quotations": {
+      "title": "Meine Angebotsanfragen",
+      "status": {
+        "pending": "Ausstehend",
+        "quoted": "Angebot erhalten",
+        "accepted": "Angenommen",
+        "completed": "Abgeschlossen"
+      }
+    },
+    "profile": {
+      "title": "Profil",
+      "updateProfile": "Profil aktualisieren"
+    }
+  },
+  "support": {
+    "title": "Unterstützung & Hilfe",
+    "subtitle": "Wir sind hier, um Ihnen bei Ihrer Camino-Reise zu helfen",
+    "contact": {
+      "title": "Kontaktieren Sie uns",
+      "description": "Haben Sie Fragen? Unser Expertenteam ist hier, um zu helfen."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "question1": "Wann ist die beste Zeit für den Camino?",
+      "answer1": "Die beste Zeit hängt von Ihrer gewählten Route ab. Im Allgemeinen sind April-Juni und September-Oktober ideal für die meisten Routen.",
+      "question2": "Wie schwierig ist der Camino?",
+      "answer2": "Die Schwierigkeit variiert je nach Route. Der Camino Francés ist anfängerfreundlich, während der Camino del Norte anspruchsvoller ist."
+    }
+  },
+  "tips": {
+    "title": "Camino-Tipps & Ratschläge",
+    "subtitle": "Expertenratschläge für eine erfolgreiche Pilgerreise",
+    "categories": {
+      "preparation": "Vorbereitung",
+      "packing": "Packen",
+      "health": "Gesundheit",
+      "safety": "Sicherheit",
+      "cultural": "Kulturell",
+      "spiritual": "Spirituell"
+    }
+  },
+  "passport": {
+    "title": "Pilgerausweis",
+    "subtitle": "Verfolgen Sie Ihre Camino-Reise und sammeln Sie Stempel",
+    "stamps": "Stempel",
+    "route": "Route",
+    "startDate": "Startdatum",
+    "addStamp": "Stempel hinzufügen",
+    "location": "Ort",
+    "date": "Datum",
+    "notes": "Notizen"
+  },
+  "planner": {
+    "title": "Reiseplaner",
+    "subtitle": "Planen Sie Ihre perfekte Camino-Reise",
+    "selectRoute": "Route auswählen",
+    "customizeItinerary": "Reiseplan anpassen",
+    "addRestDays": "Ruhetage hinzufügen",
+    "accommodationLevel": "Unterkunftsniveau",
+    "generatePlan": "Plan erstellen"
+  }
+}

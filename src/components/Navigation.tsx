@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { 
   MapPin, 
   Home, 
@@ -16,18 +18,19 @@ import {
 
 const STORAGE_KEY = 'camino-app-authenticated';
 
-const navigationItems = [
-  { path: '/', icon: Home, label: 'Home' },
-  { path: '/routes', icon: Map, label: 'Routes' },
-  { path: '/planner', icon: Calendar, label: 'My Planner' },
-  { path: '/passport', icon: BookOpen, label: 'Passport' },
-  { path: '/tips', icon: Notebook, label: 'Tips & Guide' },
-  { path: '/support', icon: HelpCircle, label: 'Support' },
-  { path: '/auth', icon: LogOut, label: 'Sign In' },
-];
-
 export const Navigation: React.FC = () => {
   const location = useLocation();
+  const { t } = useTranslation();
+
+  const navigationItems = [
+    { path: '/', icon: Home, label: t('nav.home') },
+    { path: '/routes', icon: Map, label: t('nav.routes') },
+    { path: '/planner', icon: Calendar, label: t('nav.planner') },
+    { path: '/passport', icon: BookOpen, label: t('nav.passport') },
+    { path: '/tips', icon: Notebook, label: t('nav.tips') },
+    { path: '/support', icon: HelpCircle, label: t('nav.support') },
+    { path: '/auth', icon: LogOut, label: t('nav.login') },
+  ];
   
   const handleLogout = () => {
     localStorage.removeItem(STORAGE_KEY);
@@ -68,6 +71,8 @@ export const Navigation: React.FC = () => {
                 </Link>
               );
             })}
+            
+            <LanguageSwitcher />
             
             <Button
               variant="ghost"

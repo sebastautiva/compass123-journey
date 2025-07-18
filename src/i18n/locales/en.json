@@ -80,5 +80,136 @@
     },
     "success": "Quote request submitted successfully! We'll contact you within 24 hours.",
     "error": "Error submitting quote request. Please try again."
+  },
+  "home": {
+    "hero": {
+      "title": "Your Dream Camino Awaits",
+      "subtitle": "Discover the spiritual journey of a lifetime with customized Camino routes tailored to your needs.",
+      "cta": "Begin Your Journey"
+    },
+    "features": {
+      "planning": {
+        "title": "Expert Planning",
+        "description": "Personalized routes based on your abilities and interests"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Help before, during, and after your pilgrimage"
+      },
+      "accommodation": {
+        "title": "Premium Accommodations",
+        "description": "Hand-picked accommodations for every comfort and budget"
+      }
+    }
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "signInWith": "Sign in with",
+    "or": "or",
+    "loading": "Loading...",
+    "welcome": "Welcome back",
+    "createAccount": "Create Account",
+    "enterEmail": "Enter your email address",
+    "enterPassword": "Enter your password",
+    "errors": {
+      "invalidCredentials": "Invalid credentials",
+      "emailRequired": "Email is required",
+      "passwordRequired": "Password is required",
+      "passwordMismatch": "Passwords do not match",
+      "emailInUse": "Email already in use",
+      "weakPassword": "Password is too weak"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "select": "Select",
+    "all": "All",
+    "none": "None"
+  },
+  "dashboard": {
+    "title": "My Dashboard",
+    "welcome": "Welcome back",
+    "quotations": {
+      "title": "My Quote Requests",
+      "status": {
+        "pending": "Pending",
+        "quoted": "Quoted",
+        "accepted": "Accepted",
+        "completed": "Completed"
+      }
+    },
+    "profile": {
+      "title": "Profile",
+      "updateProfile": "Update Profile"
+    }
+  },
+  "support": {
+    "title": "Support & Help",
+    "subtitle": "We're here to help you with your Camino journey",
+    "contact": {
+      "title": "Contact Us",
+      "description": "Have questions? Our expert team is here to help."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "question1": "What's the best time to walk the Camino?",
+      "answer1": "The best time depends on your chosen route. Generally, April-June and September-October are ideal for most routes.",
+      "question2": "How difficult is the Camino?",
+      "answer2": "Difficulty varies by route. The Camino Francés is beginner-friendly, while the Camino del Norte is more challenging."
+    }
+  },
+  "tips": {
+    "title": "Camino Tips & Advice",
+    "subtitle": "Expert advice for a successful pilgrimage",
+    "categories": {
+      "preparation": "Preparation",
+      "packing": "Packing",
+      "health": "Health",
+      "safety": "Safety",
+      "cultural": "Cultural",
+      "spiritual": "Spiritual"
+    }
+  },
+  "passport": {
+    "title": "Pilgrim Passport",
+    "subtitle": "Track your Camino journey and collect stamps",
+    "stamps": "Stamps",
+    "route": "Route",
+    "startDate": "Start Date",
+    "addStamp": "Add Stamp",
+    "location": "Location",
+    "date": "Date",
+    "notes": "Notes"
+  },
+  "planner": {
+    "title": "Trip Planner",
+    "subtitle": "Plan your perfect Camino journey",
+    "selectRoute": "Select Route",
+    "customizeItinerary": "Customize Itinerary",
+    "addRestDays": "Add Rest Days",
+    "accommodationLevel": "Accommodation Level",
+    "generatePlan": "Generate Plan"
   }
 }
