@@ -346,7 +346,7 @@ export const RouteDetailPage: React.FC = () => {
       <Tabs defaultValue="overview" className="w-full">
         <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="stages">Stages ({stages.length})</TabsTrigger>
+          <TabsTrigger value="stages">Stages ({route.stages ? route.stages.length : stages.length})</TabsTrigger>
           <TabsTrigger value="practical">Practical Info</TabsTrigger>
         </TabsList>
 
@@ -384,9 +384,151 @@ export const RouteDetailPage: React.FC = () => {
         </TabsContent>
 
         <TabsContent value="stages" className="space-y-4">
-          {loading ? (
-            <div className="text-center py-8">Loading stages...</div>
-          ) : stages.length === 0 ? (
+          {/* Use static route data if no database stages available */}
+          {route.stages && route.stages.length > 0 ? (
+            <div className="space-y-4">
+              {/* Route variants selector if multiple variants exist */}
+              {route.id === 'camino-frances' && (
+                <Card className="border-primary/20">
+                  <CardContent className="p-4">
+                    <h3 className="font-semibold mb-2">Route Variants</h3>
+                    <div className="grid gap-2 text-sm">
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline">Stage 1A</Badge>
+                        <span>Napoleon Route (Summer) - Maximum difficulty</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline">Stage 1B</Badge>
+                        <span>Valcarlos Route (Winter) - Safer alternative</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+              
+              {route.stages.map((stage) => (
+                <Card key={stage.id} className="overflow-hidden">
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <div className="flex-1">
+                        <CardTitle className="text-lg flex items-center gap-2">
+                          <Badge variant="outline" className="text-xs">
+                            Stage {stage.stageNumber}
+                          </Badge>
+                          {stage.name}
+                        </CardTitle>
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {stage.startPoint} → {stage.endPoint}
+                        </p>
+                      </div>
+                      <Badge className={`${difficultyColors[stage.difficulty]} text-white shrink-0`}>
+                        {stage.difficulty}
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground">{stage.description}</p>
+                    
+                    {/* Stage statistics */}
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 p-4 bg-muted/50 rounded-lg">
+                      <div className="text-center">
+                        <MapPin className="h-4 w-4 mx-auto text-primary mb-1" />
+                        <p className="font-semibold text-sm">{stage.distance}km</p>
+                        <p className="text-xs text-muted-foreground">Distance</p>
+                      </div>
+                      <div className="text-center">
+                        <Clock className="h-4 w-4 mx-auto text-primary mb-1" />
+                        <p className="font-semibold text-sm">{stage.estimatedTime}</p>
+                        <p className="text-xs text-muted-foreground">Duration</p>
+                      </div>
+                      <div className="text-center">
+                        <TrendingUp className="h-4 w-4 mx-auto text-green-600 mb-1" />
+                        <p className="font-semibold text-sm">+{stage.elevation.ascent}m</p>
+                        <p className="text-xs text-muted-foreground">Ascent</p>
+                      </div>
+                      <div className="text-center">
+                        <TrendingUp className="h-4 w-4 mx-auto text-orange-600 mb-1 rotate-180" />
+                        <p className="font-semibold text-sm">-{stage.elevation.descent}m</p>
+                        <p className="text-xs text-muted-foreground">Descent</p>
+                      </div>
+                      <div className="text-center">
+                        <Mountain className="h-4 w-4 mx-auto text-primary mb-1" />
+                        <p className="font-semibold text-sm">{stage.elevation.highest}m</p>
+                        <p className="text-xs text-muted-foreground">Highest</p>
+                      </div>
+                    </div>
+
+                    {/* Elevation profile visualization */}
+                    <div className="bg-muted/30 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-3 flex items-center gap-2">
+                        <Mountain className="h-4 w-4" />
+                        Elevation Profile
+                      </h4>
+                      <div className="relative h-24 bg-gradient-to-r from-green-100 via-yellow-100 to-red-100 rounded-lg flex items-end justify-between px-4 py-2">
+                        <div className="text-center">
+                          <div className="text-xs font-medium">{stage.elevation.lowest}m</div>
+                          <div className="text-xs text-muted-foreground">Start</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-xs font-medium">{stage.elevation.highest}m</div>
+                          <div className="text-xs text-muted-foreground">Peak</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-xs font-medium">{stage.elevation.lowest + stage.elevation.ascent - stage.elevation.descent}m</div>
+                          <div className="text-xs text-muted-foreground">End</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Terrain and highlights */}
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="font-semibold mb-2">Terrain</h4>
+                        <p className="text-sm text-muted-foreground">{stage.terrain}</p>
+                      </div>
+                      {stage.highlights && stage.highlights.length > 0 && (
+                        <div>
+                          <h4 className="font-semibold mb-2">Highlights</h4>
+                          <ul className="text-sm space-y-1">
+                            {stage.highlights.map((highlight, index) => (
+                              <li key={index} className="flex items-start gap-2">
+                                <Camera className="h-3 w-3 text-primary mt-1 shrink-0" />
+                                <span>{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Warnings */}
+                    {stage.warnings && stage.warnings.length > 0 && (
+                      <div className="bg-yellow-50 border border-yellow-200 p-3 rounded-lg">
+                        <h4 className="font-semibold mb-2 flex items-center gap-2 text-yellow-800">
+                          <AlertTriangle className="h-4 w-4" />
+                          Important Information
+                        </h4>
+                        <ul className="text-sm space-y-1 text-yellow-700">
+                          {stage.warnings.map((warning, index) => (
+                            <li key={index} className="flex items-start gap-2">
+                              <span className="text-yellow-600 mt-1">•</span>
+                              <span>{warning}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : loading ? (
+            <div className="text-center py-8">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+              <p>Loading detailed stages...</p>
+            </div>
+          ) : (
             <Card>
               <CardContent className="p-8 text-center">
                 <Mountain className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
@@ -396,74 +538,6 @@ export const RouteDetailPage: React.FC = () => {
                 </p>
               </CardContent>
             </Card>
-          ) : (
-            <div className="space-y-4">
-              {stages.map((stage) => (
-                <Card key={stage.id}>
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <CardTitle className="text-lg">
-                          Stage {stage.stage_number}: {stage.name}
-                        </CardTitle>
-                        <p className="text-sm text-muted-foreground">
-                          {stage.start_point} → {stage.end_point}
-                        </p>
-                      </div>
-                      <Badge className={`${difficultyColors[stage.difficulty]} text-white`}>
-                        {stage.difficulty}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">{stage.detailed_description}</p>
-                    
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                      <div>
-                        <span className="font-semibold">Distance:</span> {stage.distance}km
-                      </div>
-                      <div>
-                        <span className="font-semibold">Time:</span> {stage.estimated_time}
-                      </div>
-                      <div>
-                        <span className="font-semibold">Ascent:</span> +{stage.elevation_gain}m
-                      </div>
-                      <div>
-                        <span className="font-semibold">Descent:</span> -{stage.elevation_loss}m
-                      </div>
-                    </div>
-
-                    {stage.points_of_interest && stage.points_of_interest.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold mb-2">Points of Interest:</h4>
-                        <ul className="text-sm space-y-1">
-                          {stage.points_of_interest.map((poi, index) => (
-                            <li key={index} className="flex items-start">
-                              <Camera className="h-4 w-4 mr-2 text-primary mt-0.5" />
-                              {poi}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {stage.warnings && stage.warnings.length > 0 && (
-                      <div className="bg-yellow-50 p-3 rounded-lg">
-                        <h4 className="font-semibold mb-2 flex items-center">
-                          <AlertTriangle className="h-4 w-4 mr-2 text-yellow-600" />
-                          Important Notes:
-                        </h4>
-                        <ul className="text-sm space-y-1">
-                          {stage.warnings.map((warning, index) => (
-                            <li key={index}>• {warning}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           )}
         </TabsContent>
 
