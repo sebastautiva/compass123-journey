@@ -83,8 +83,12 @@ export const RouteDetailPage: React.FC = () => {
       const foundRoute = caminoRoutes.find(r => r.id === routeId);
       setRoute(foundRoute);
       
-      // Fetch stages from database
-      fetchStages();
+      // Only fetch stages from database if static route data doesn't have stages
+      if (!foundRoute?.stages || foundRoute.stages.length === 0) {
+        fetchStages();
+      } else {
+        setLoading(false);
+      }
     }
   }, [routeId]);
 
@@ -165,6 +169,14 @@ export const RouteDetailPage: React.FC = () => {
       });
     }
   };
+
+  if (loading) {
+    return (
+      <div className="container mx-auto p-6">
+        <div className="text-center py-8">Loading route details...</div>
+      </div>
+    );
+  }
 
   if (!route) {
     return (
@@ -386,8 +398,8 @@ export const RouteDetailPage: React.FC = () => {
         </TabsContent>
 
         <TabsContent value="stages" className="space-y-4">
-          {/* Use static route data if no database stages available */}
-          {route.stages && route.stages.length > 0 ? (
+          {/* Display stages from static route data or fallback to database stages */}
+          {(route.stages && route.stages.length > 0) || stages.length > 0 ? (
             <div className="space-y-4">
               {/* Route variants selector if multiple variants exist */}
               {route.id === 'camino-frances' && (
@@ -408,7 +420,7 @@ export const RouteDetailPage: React.FC = () => {
                 </Card>
               )}
               
-              {route.stages.map((stage) => (
+              {(route.stages || stages).map((stage) => (
                 <Card key={stage.id} className="overflow-hidden">
                   <CardHeader>
                     <div className="flex justify-between items-start">
