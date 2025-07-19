@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -13,7 +13,9 @@ import {
   HelpCircle, 
   LogOut,
   Route,
-  Notebook
+  Notebook,
+  Menu,
+  X
 } from 'lucide-react';
 
 const STORAGE_KEY = 'camino-app-authenticated';
@@ -21,6 +23,7 @@ const STORAGE_KEY = 'camino-app-authenticated';
 export const Navigation: React.FC = () => {
   const location = useLocation();
   const { t } = useTranslation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
     { path: '/', icon: Home, label: t('nav.home') },
@@ -85,44 +88,57 @@ export const Navigation: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageSwitcher />
             <Button
               variant="ghost"
               size="sm"
-              onClick={handleLogout}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-muted-foreground hover:text-foreground"
             >
-              <LogOut className="h-4 w-4" />
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden border-t border-border">
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          {navigationItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = location.pathname === item.path;
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-t border-border">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            {navigationItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = location.pathname === item.path;
+              
+              return (
+                <Link key={item.path} to={item.path} onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button
+                    variant={isActive ? "default" : "ghost"}
+                    className={`w-full justify-start text-senior ${
+                      isActive 
+                        ? 'bg-camino-gold text-camino-gold-foreground' 
+                        : 'hover:bg-secondary'
+                    }`}
+                  >
+                    <Icon className="h-4 w-4 mr-2" />
+                    {item.label}
+                  </Button>
+                </Link>
+              );
+            })}
             
-            return (
-              <Link key={item.path} to={item.path}>
-                <Button
-                  variant={isActive ? "default" : "ghost"}
-                  className={`w-full justify-start text-senior ${
-                    isActive 
-                      ? 'bg-camino-gold text-camino-gold-foreground' 
-                      : 'hover:bg-secondary'
-                  }`}
-                >
-                  <Icon className="h-4 w-4 mr-2" />
-                  {item.label}
-                </Button>
-              </Link>
-            );
-          })}
+            {/* Logout Button for Mobile */}
+            <Button
+              variant="ghost"
+              onClick={handleLogout}
+              className="w-full justify-start text-muted-foreground hover:text-foreground"
+            >
+              <LogOut className="h-4 w-4 mr-2" />
+              Logout
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
