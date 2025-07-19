@@ -10,9 +10,9 @@ import {
 import { Globe } from 'lucide-react';
 
 const languages = [
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' }
+  { code: 'en', name: 'English', nativeName: 'English', flag: '🇬🇧' },
+  { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
+  { code: 'de', name: 'German', nativeName: 'Deutsch', flag: '🇩🇪' }
 ];
 
 export const LanguageSwitcher: React.FC = () => {
@@ -30,7 +30,7 @@ export const LanguageSwitcher: React.FC = () => {
         <Button variant="ghost" size="sm" className="gap-2">
           <Globe className="h-4 w-4" />
           <span className="text-lg">{currentLanguage.flag}</span>
-          <span className="hidden sm:inline">{currentLanguage.name}</span>
+          <span className="hidden sm:inline">{currentLanguage.nativeName}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -41,7 +41,8 @@ export const LanguageSwitcher: React.FC = () => {
             className="gap-2"
           >
             <span className="text-lg">{language.flag}</span>
-            {language.name}
+            <span className="font-medium">{language.nativeName}</span>
+            <span className="text-sm text-muted-foreground ml-2">({language.name})</span>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

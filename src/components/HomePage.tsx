@@ -106,9 +106,15 @@ export const HomePage: React.FC = () => {
                 The classic route from France through northern Spain. 
                 Most popular with excellent infrastructure.
               </p>
-              <div className="flex items-center justify-between text-sm">
-                <span>800km • 35 days</span>
-                <span className="text-camino-gold">Moderate</span>
+              <div className="flex items-center justify-between text-sm mb-3">
+                <span>764km • 33 stages</span>
+                <span className="text-yellow-600">Moderate</span>
+              </div>
+              <div className="space-y-1 text-xs text-muted-foreground">
+                <div>Stage 1: Saint-Jean-Pied-de-Port → Roncesvalles (24.2km)</div>
+                <div>Stage 2: Roncesvalles → Zubiri (21.4km)</div>
+                <div>Stage 3: Zubiri → Pamplona (20.4km)</div>
+                <div className="text-camino-gold">+ 30 more stages...</div>
               </div>
             </CardContent>
           </Card>
@@ -125,9 +131,65 @@ export const HomePage: React.FC = () => {
                 Beautiful coastal route from Porto through charming 
                 Portuguese villages and towns.
               </p>
-              <div className="flex items-center justify-between text-sm">
-                <span>620km • 27 days</span>
+              <div className="flex items-center justify-between text-sm mb-3">
+                <span>620km • 27 stages</span>
                 <span className="text-green-600">Easy</span>
+              </div>
+              <div className="space-y-1 text-xs text-muted-foreground">
+                <div>Stage 1: Lisboa → Alpriate (21.7km)</div>
+                <div>Stage 2: Alpriate → Vila Franca (18.8km)</div>
+                <div>Stage 3: Vila Franca → Azambuja (20km)</div>
+                <div className="text-camino-gold">+ 24 more stages...</div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-lift">
+            <CardHeader>
+              <CardTitle className="flex items-center text-xl">
+                <Mountain className="h-5 w-5 mr-2 text-camino-gold" />
+                Camino del Norte
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-4">
+                Spectacular coastal route along Spain's northern coast.
+                Challenging terrain with breathtaking ocean views.
+              </p>
+              <div className="flex items-center justify-between text-sm mb-3">
+                <span>815km • 33 stages</span>
+                <span className="text-red-600">Challenging</span>
+              </div>
+              <div className="space-y-1 text-xs text-muted-foreground">
+                <div>Stage 1: Irún → San Sebastián (27.5km)</div>
+                <div>Stage 2: San Sebastián → Zarautz (20.5km)</div>
+                <div>Stage 3: Zarautz → Deba (22km)</div>
+                <div className="text-camino-gold">+ 30 more stages...</div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-lift">
+            <CardHeader>
+              <CardTitle className="flex items-center text-xl">
+                <Mountain className="h-5 w-5 mr-2 text-camino-gold" />
+                Camino Primitivo
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-4">
+                The original pilgrimage route from Oviedo. 
+                Mountainous terrain with stunning landscapes.
+              </p>
+              <div className="flex items-center justify-between text-sm mb-3">
+                <span>320km • 14 stages</span>
+                <span className="text-red-600">Difficult</span>
+              </div>
+              <div className="space-y-1 text-xs text-muted-foreground">
+                <div>Stage 1: Oviedo → Grado (25.2km)</div>
+                <div>Stage 2: Grado → Salas (22.1km)</div>
+                <div>Stage 3: Salas → Tineo (19.8km)</div>
+                <div className="text-camino-gold">+ 11 more stages...</div>
               </div>
             </CardContent>
           </Card>
