@@ -21,7 +21,14 @@ import {
 const STORAGE_KEY = 'camino-app-authenticated';
 
 export const Navigation: React.FC = () => {
-  const location = useLocation();
+  // Safely handle useLocation hook
+  let location;
+  try {
+    location = useLocation();
+  } catch (error) {
+    // Fallback if not in Router context
+    location = { pathname: '/' };
+  }
   const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
