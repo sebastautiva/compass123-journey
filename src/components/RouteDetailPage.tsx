@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import RouteMap from './RouteMap';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -365,6 +366,19 @@ export const RouteDetailPage: React.FC = () => {
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
+          {/* Route Map */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <MapPin className="h-5 w-5" />
+                Route Map
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <RouteMap route={route} height="500px" />
+            </CardContent>
+          </Card>
+
           <Card>
             <CardHeader>
               <CardTitle>Route Highlights</CardTitle>
