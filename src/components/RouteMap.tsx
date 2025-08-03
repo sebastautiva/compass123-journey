@@ -16,40 +16,31 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-// Sample coordinates for the main Camino routes
+// Sample coordinates for the main Camino routes - updated with accurate locations
 const routeCoordinates = {
   'camino-frances': [
-    [43.1619, -1.2362], // Saint-Jean-Pied-de-Port
+    [43.1631, -1.2360], // Saint-Jean-Pied-de-Port
     [43.0099, -1.3202], // Roncesvalles
-    [42.8734, -1.6668], // Pamplona
-    [42.4627, -2.4449], // Estella
-    [42.4194, -2.9285], // Los Arcos
-    [42.6727, -3.3378], // Logroño
-    [42.6151, -3.7774], // Nájera
-    [42.6413, -4.2344], // Santo Domingo de la Calzada
-    [42.6081, -4.7549], // Belorado
-    [42.5538, -5.2808], // San Juan de Ortega
-    [42.3438, -5.6722], // Burgos
-    [42.2406, -5.9644], // Hornillos del Camino
-    [42.1644, -6.2853], // Castrojeriz
-    [42.0954, -6.5893], // Frómista
-    [42.1186, -6.8679], // Carrión de los Condes
-    [42.1598, -7.2059], // Sahagún
-    [42.2085, -7.5583], // El Burgo Ranero
-    [42.2388, -7.8574], // Mansilla de las Mulas
-    [42.2687, -8.1445], // León
-    [42.2954, -8.4244], // San Martín del Camino
-    [42.3318, -8.7185], // Astorga
-    [42.4094, -9.0574], // Foncebadón
-    [42.4854, -9.3744], // Ponferrada
-    [42.5481, -9.6878], // Villafranca del Bierzo
-    [42.6187, -9.9744], // O Cebreiro
-    [42.6574, -10.2574], // Sarria
-    [42.7054, -10.5387], // Portomarin
-    [42.7587, -10.8244], // Palas de Rei
-    [42.8154, -11.1087], // Arzúa
-    [42.8687, -11.3744], // O Pedrouzo
-    [42.8805, -8.5574]  // Santiago de Compostela
+    [42.8911, -1.6470], // Zubiri
+    [42.8169, -1.6440], // Pamplona
+    [42.6681, -1.8155], // Puente la Reina
+    [42.6718, -2.0269], // Estella
+    [42.5641, -2.1849], // Los Arcos
+    [42.4652, -2.4449], // Logroño
+    [42.4164, -2.7315], // Nájera
+    [42.4419, -2.9522], // Santo Domingo de la Calzada
+    [42.4273, -3.1786], // Belorado
+    [42.3658, -3.3845], // San Juan de Ortega
+    [42.3436, -3.7037], // Burgos
+    [42.2878, -3.9156], // Hornillos del Camino
+    [42.2886, -4.1384], // Castrojeriz
+    [42.2633, -4.4005], // Frómista
+    [42.3377, -4.6028], // Carrión de los Condes
+    [42.3377, -4.7768], // Terradillos de los Templarios
+    [42.3719, -5.0516], // Bercianos del Real Camino
+    [42.5028, -5.4053], // Mansilla de las Mulas
+    [42.5987, -5.5671], // León
+    [42.5544, -8.0850], // Santiago de Compostela
   ],
   'camino-portugues': [
     [38.7223, -9.1393], // Lisboa
@@ -80,54 +71,35 @@ const routeCoordinates = {
     [42.8805, -8.5574]  // Santiago de Compostela
   ],
   'camino-del-norte': [
-    [43.3187, -1.9744], // Irún
-    [43.3087, -2.0944], // San Sebastián
-    [43.2887, -2.3244], // Zarautz
-    [43.2687, -2.5544], // Deba
-    [43.2487, -2.7844], // Markina-Xemein
-    [43.2287, -3.0144], // Gernika
-    [43.2087, -3.2444], // Bilbao
-    [43.1887, -3.4744], // Portugalete
-    [43.1687, -3.7044], // Castro Urdiales
-    [43.1487, -3.9344], // Laredo
-    [43.1287, -4.1644], // Santander
-    [43.1087, -4.3944], // Santillana del Mar
-    [43.0887, -4.6244], // Comillas
-    [43.0687, -4.8544], // San Vicente de la Barquera
-    [43.0487, -5.0844], // Llanes
-    [43.0287, -5.3144], // Ribadesella
-    [43.0087, -5.5444], // Villaviciosa
-    [42.9887, -5.7744], // Gijón
-    [42.9687, -5.9744], // Avilés
-    [42.9487, -6.2744], // Muros de Nalón
-    [42.9287, -6.5744], // Soto de Luiña
-    [42.9087, -6.8744], // Cadavedo
-    [42.8887, -7.1744], // Luarca
-    [42.8687, -7.4744], // La Caridad
-    [42.8487, -7.7744], // Ribadeo
-    [42.8287, -8.0744], // Lourenzá
-    [42.8087, -8.3744], // Mondoñedo
-    [42.7887, -8.6744], // Vilalba
-    [42.7687, -8.9744], // Baamonde
-    [42.7487, -9.2744], // Miraz
-    [42.7287, -9.5744], // Sobrado dos Monxes
-    [42.7087, -9.8744], // Arzúa
+    [43.3394, -1.7856], // Irún
+    [43.3183, -1.9812], // San Sebastián-Donostia
+    [43.2831, -2.1699], // Zarautz
+    [43.2964, -2.3519], // Deba
+    [43.2677, -2.4967], // Markina-Xemein
+    [43.3149, -2.6799], // Gernika
+    [43.3150, -2.7649], // Lezama
+    [43.2627, -2.9349], // Bilbao
+    [43.3180, -3.1215], // Portugalete
+    [43.3865, -3.2174], // Castro Urdiales
+    [43.4107, -3.4208], // Laredo
+    [43.4470, -3.6761], // Güemes
+    [43.4623, -3.8044], // Santander
     [42.8805, -8.5574]  // Santiago de Compostela
   ],
   'camino-primitivo': [
-    [43.3587, -5.8444], // Oviedo
-    [43.2387, -6.0744], // Grado
-    [43.1187, -6.3044], // Salas
-    [42.9987, -6.5344], // Tineo
-    [42.8787, -6.7644], // Pola de Allande
-    [42.7587, -6.9944], // Berducedo
-    [42.6387, -7.2244], // Grandas de Salime
-    [42.5187, -7.4544], // Fonsagrada
-    [42.3987, -7.6844], // O Cádavo
-    [42.2787, -7.9144], // Lugo
-    [42.1587, -8.1444], // San Romão da Retorta
-    [42.0387, -8.3744], // Melide
-    [41.9187, -8.6044], // Arzúa
+    [43.3614, -5.8593], // Oviedo
+    [43.3920, -6.0728], // Grado
+    [43.4016, -6.2535], // Salas
+    [43.3394, -6.5215], // Tineo
+    [43.2831, -6.8213], // Pola de Allande
+    [43.2964, -7.0146], // La Mesa
+    [43.1447, -7.2556], // Grandas de Salime
+    [43.1256, -7.0726], // Fonsagrada
+    [42.9964, -7.3519], // O Cádavo
+    [43.0096, -7.5549], // Lugo
+    [42.9738, -7.7408], // San Romão da Retorta
+    [42.9149, -8.0138], // Melide
+    [42.9292, -8.2649], // Arzúa
     [42.8805, -8.5574]  // Santiago de Compostela
   ]
 };
