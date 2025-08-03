@@ -52,19 +52,31 @@ const routeCoordinates = {
     [42.8805, -8.5574]  // Santiago de Compostela
   ],
   'camino-portugues': [
+    [38.7223, -9.1393], // Lisboa
+    [38.8632, -9.0950], // Alpriate
+    [39.2342, -8.6881], // Azambuja
+    [39.2369, -8.6881], // Santarém
+    [39.3667, -8.4833], // Golega
+    [39.6031, -8.4103], // Tomar
+    [39.8411, -8.3850], // Alvaiázere
+    [39.9097, -8.4333], // Ansião
+    [40.2033, -8.4103], // Coimbra
+    [40.3778, -8.4494], // Mealhada
+    [40.5643, -8.4394], // Águeda
+    [40.6897, -8.4889], // Albergaria-a-Velha
+    [40.9014, -8.4944], // São João da Madeira
+    [41.0089, -8.5756], // Grijó
     [41.1579, -8.6291], // Porto
-    [41.2874, -8.6854], // Matosinhos
-    [41.4187, -8.7544], // Vila do Conde
-    [41.5987, -8.8244], // Póvoa de Varzim
-    [41.7544, -8.8987], // Esposende
-    [41.8987, -8.9544], // Viana do Castelo
-    [42.0187, -9.0244], // Caminha
-    [42.1387, -9.1544], // Valença
-    [42.2587, -9.2244], // Tui
-    [42.3787, -9.3044], // Redondela
-    [42.4987, -9.3844], // Pontevedra
-    [42.6187, -9.4644], // Caldas de Reis
-    [42.7387, -9.5444], // Padrón
+    [41.3267, -8.5389], // Vilarinho
+    [41.5388, -8.6151], // Barcelos
+    [41.7675, -8.5839], // Ponte de Lima
+    [41.9092, -8.6417], // Rubiaes
+    [42.0471, -8.6446], // Tui (Spain)
+    [42.1572, -8.6194], // O Porriño
+    [42.2856, -8.6075], // Redondela
+    [42.4318, -8.6446], // Pontevedra
+    [42.6035, -8.6400], // Caldas de Reis
+    [42.7387, -8.6592], // Padrón
     [42.8805, -8.5574]  // Santiago de Compostela
   ],
   'camino-del-norte': [
