@@ -181,15 +181,193 @@
     }
   },
   "tips": {
-    "title": "Camino-Tipps & Ratschläge",
-    "subtitle": "Expertenratschläge für eine erfolgreiche Pilgerreise",
+    "title": "Senior Pilger-Leitfaden",
+    "subtitle": "Wichtige Tipps und Ratschläge für Reisende 50+ die ihre Camino de Santiago Reise planen.",
     "categories": {
-      "preparation": "Vorbereitung",
-      "packing": "Packen",
-      "health": "Gesundheit",
-      "safety": "Sicherheit",
-      "cultural": "Kulturell",
-      "spiritual": "Spirituell"
+      "packing": "Packen für Senioren",
+      "health": "Gesundheit & Sicherheit",
+      "safety": "Sicherheit & Schutz",
+      "cultural": "Kulturelle Tipps",
+      "language": "Grundlegendes Spanisch",
+      "preparation": "Reisevorbereitung"
+    },
+    "packing": {
+      "essentialClothing": {
+        "title": "Grundlegende Kleidung",
+        "content": "Packen Sie 3-4 Garnituren feuchtigkeitsableitende Kleidung ein, einschließlich Merino-Wolle-Unterlagen. Bringen Sie eine leichte Regenjacke und -hose mit. Packen Sie eine warme Schicht für die Abende ein.",
+        "importance": "hoch"
+      },
+      "comfortableFootwear": {
+        "title": "Bequemes Schuhwerk",
+        "content": "Eingelaufene Wanderschuhe sind unerlässlich. Packen Sie 2-3 Paar feuchtigkeitsableitende Socken ein und erwägen Sie Lager-Schuhe für die Abende.",
+        "importance": "hoch"
+      },
+      "seniorSpecificItems": {
+        "title": "Senior-spezifische Gegenstände",
+        "content": "Bringen Sie einen leichten Campingstuhl, Kompressionsstrümpfe, extra gepolsterte Einlegesohlen und ein kleines Kissen für besseren Schlafkomfort mit.",
+        "importance": "mittel"
+      },
+      "medicationsHealth": {
+        "title": "Medikamente & Gesundheit",
+        "content": "Packen Sie alle Medikamente in Originalverpackungen ein, bringen Sie ein Erste-Hilfe-Set mit und tragen Sie Kopien der Rezepte bei sich. Nehmen Sie Blasenbehandlungsutensilien mit.",
+        "importance": "hoch"
+      },
+      "electronicsDocuments": {
+        "title": "Elektronik & Dokumente",
+        "content": "Bringen Sie ein tragbares Ladegerät, einen universellen Adapter und eine wasserdichte Handyhülle mit. Halten Sie Reisepass, Versicherungskarten und Notfallkontakte griffbereit.",
+        "importance": "mittel"
+      }
+    },
+    "health": {
+      "physicalPreparation": {
+        "title": "Körperliche Vorbereitung",
+        "content": "Beginnen Sie 3-6 Monate vor Ihrer Reise mit dem Training. Steigern Sie sich allmählich auf 15-20km Gehen mit Ihrem Rucksack. Konzentrieren Sie sich auf die Stärkung der Beinmuskulatur und die Verbesserung der Ausdauer.",
+        "importance": "hoch"
+      },
+      "managingChronicConditions": {
+        "title": "Umgang mit chronischen Erkrankungen",
+        "content": "Konsultieren Sie Ihren Arzt vor der Reise. Stellen Sie sicher, dass Sie genug Medikamente für die gesamte Reise plus extra haben. Lernen Sie, wie Sie Ihre Erkrankungen auf Spanisch sagen.",
+        "importance": "hoch"
+      },
+      "preventingInjuries": {
+        "title": "Verletzungsprävention",
+        "content": "Wärmen Sie sich vor dem täglichen Gehen auf. Verwenden Sie Trekkingstöcke, um Gelenkbelastungen zu reduzieren. Machen Sie regelmäßige Pausen und hören Sie auf Ihren Körper.",
+        "importance": "hoch"
+      },
+      "hydrationNutrition": {
+        "title": "Hydratation & Ernährung",
+        "content": "Trinken Sie regelmäßig Wasser, auch wenn Sie keinen Durst haben. Packen Sie Elektrolyt-Ergänzungen ein. Essen Sie regelmäßige Mahlzeiten und tragen Sie Energy-Snacks bei sich.",
+        "importance": "mittel"
+      },
+      "emergencyContacts": {
+        "title": "Notfallkontakte",
+        "content": "Programmieren Sie örtliche Notrufnummern (112 in Spanien/Portugal) in Ihr Telefon. Erwägen Sie den Kauf einer Reiseversicherung mit medizinischer Abdeckung.",
+        "importance": "hoch"
+      }
+    },
+    "safety": {
+      "personalSafety": {
+        "title": "Persönliche Sicherheit",
+        "content": "Gehen Sie wenn möglich in Gruppen, besonders in städtischen Gebieten. Informieren Sie jemanden über Ihre täglichen Pläne. Vertrauen Sie Ihrem Instinkt bei Personen und Situationen.",
+        "importance": "hoch"
+      },
+      "weatherAwareness": {
+        "title": "Wetterbewusstsein",
+        "content": "Überprüfen Sie täglich die Wettervorhersagen. Seien Sie auf plötzliche Wetteränderungen in Berggebieten vorbereitet. Kennen Sie die Anzeichen von Hitzeerschöpfung und Unterkühlung.",
+        "importance": "mittel"
+      },
+      "moneyValuables": {
+        "title": "Geld & Wertsachen",
+        "content": "Verwenden Sie einen Geldgürtel oder eine versteckte Tasche. Tragen Sie keine großen Mengen Bargeld bei sich. Bewahren Sie Kopien wichtiger Dokumente getrennt von den Originalen auf.",
+        "importance": "mittel"
+      },
+      "navigationSafety": {
+        "title": "Navigationssicherheit",
+        "content": "Tragen Sie immer eine physische Karte als Backup bei sich. Laden Sie Offline-Karten auf Ihr Telefon herunter. Folgen Sie gelben Pfeilen und offiziellen Wegmarkierungen.",
+        "importance": "mittel"
+      }
+    },
+    "cultural": {
+      "spanishCustoms": {
+        "title": "Spanische Bräuche",
+        "content": "Mahlzeiten sind später als in Deutschland (Mittag 14-16 Uhr, Abendessen 21-23 Uhr). Geschäfte schließen für Siesta (14-17 Uhr). Trinkgeld wird nicht erwartet, aber geschätzt.",
+        "importance": "mittel"
+      },
+      "religiousEtiquette": {
+        "title": "Religiöse Etikette",
+        "content": "Kleiden Sie sich bescheiden beim Besuch von Kirchen. Nehmen Sie Hüte drinnen ab. Seien Sie respektvoll während religiöser Gottesdienste. Fotografieren könnte eingeschränkt sein.",
+        "importance": "mittel"
+      },
+      "pilgrimTraditions": {
+        "title": "Pilgertraditionnen",
+        "content": "Sagen Sie \"Buen Camino\" zu anderen Pilgern. Respektieren Sie die Credencial (Pilgerausweis) Tradition. Seien Sie rücksichtsvoll in Herbergen - wachen Sie leise auf.",
+        "importance": "mittel"
+      },
+      "localInteractions": {
+        "title": "Lokale Interaktionen",
+        "content": "Spanier sind im Allgemeinen warmherzig und hilfsbereit. Lernen Sie grundlegende spanische Phrasen. Seien Sie geduldig mit Sprachbarrieren.",
+        "importance": "niedrig"
+      }
+    },
+    "language": {
+      "basicGreetings": {
+        "title": "Grundlegende Begrüßungen",
+        "content": "Hola (OH-lah) - Hallo | Buenos días (BWAY-nos DEE-ahs) - Guten Morgen | Buenas tardes (BWAY-nas TAR-des) - Guten Nachmittag",
+        "importance": "hoch"
+      },
+      "caminoPhrases": {
+        "title": "Camino-Phrasen",
+        "content": "Buen Camino (bway-n kah-MEE-no) - Guter Weg | ¿Dónde está el albergue? (DON-de es-TAH el al-BER-gay) - Wo ist die Herberge?",
+        "importance": "hoch"
+      },
+      "emergencyPhrases": {
+        "title": "Notfall-Phrasen",
+        "content": "Ayuda (ah-YOO-dah) - Hilfe | Necesito un médico (neh-seh-SEE-to oon MEH-di-ko) - Ich brauche einen Arzt | No hablo español (no AH-blo es-pahn-YOHL) - Ich spreche kein Spanisch",
+        "importance": "hoch"
+      },
+      "foodAccommodation": {
+        "title": "Essen & Unterkunft",
+        "content": "Una cama, por favor (OO-na KAH-ma por fah-VOR) - Ein Bett, bitte | La cuenta, por favor (la KWAY-n-ta por fah-VOR) - Die Rechnung, bitte",
+        "importance": "mittel"
+      }
+    },
+    "preparation": {
+      "sixMonthsBefore": {
+        "title": "6 Monate vorher",
+        "content": "Beginnen Sie mit dem körperlichen Trainingsprogramm. Buchen Sie Flüge und die ersten Übernachtungen. Recherchieren Sie die Route und erstellen Sie einen groben Reiseplan.",
+        "importance": "hoch"
+      },
+      "threeMonthsBefore": {
+        "title": "3 Monate vorher",
+        "content": "Finalisieren Sie Ausrüstungskäufe und testen Sie alles. Besorgen Sie eine Reiseversicherung. Vereinbaren Sie einen medizinischen Check-up. Beginnen Sie grundlegendes Spanisch zu lernen.",
+        "importance": "hoch"
+      },
+      "oneMonthBefore": {
+        "title": "1 Monat vorher",
+        "content": "Bestätigen Sie alle Buchungen. Packen Sie und wiegen Sie Ihren Rucksack. Regeln Sie Post-/Haustierpflege. Laden Sie Offline-Karten und Apps herunter.",
+        "importance": "mittel"
+      },
+      "oneWeekBefore": {
+        "title": "1 Woche vorher",
+        "content": "Überprüfen Sie die Wettervorhersage. Laden Sie alle Geräte auf. Bereiten Sie die Notfallkontaktliste vor. Besorgen Sie Euro von der Bank.",
+        "importance": "mittel"
+      }
+    },
+    "weather": {
+      "title": "Saisonaler Wetterleitfaden",
+      "spring": {
+        "title": "Frühling (Mär-Mai)",
+        "description": "15-20°C, mäßiger Regen, blühende Wildblumen"
+      },
+      "summer": {
+        "title": "Sommer (Jun-Aug)",
+        "description": "20-30°C, trocken, heiß zur Mittagszeit"
+      },
+      "fall": {
+        "title": "Herbst (Sep-Nov)",
+        "description": "10-20°C, zunehmender Regen, schöne Farben"
+      },
+      "winter": {
+        "title": "Winter (Dez-Feb)",
+        "description": "5-15°C, häufiger Regen, Schnee möglich"
+      }
+    },
+    "emergency": {
+      "title": "Notfallinformationen",
+      "emergencyNumbers": "Notrufnummern",
+      "usEmbassyContacts": "US-Botschaftskontakte",
+      "generalEmergency": "Allgemeiner Notfall: 112",
+      "medicalEmergency": "Medizinischer Notfall: 061 (Spanien), 112 (Portugal)",
+      "police": "Polizei: 091 (Spanien), 112 (Portugal)",
+      "fire": "Feuerwehr: 080 (Spanien), 112 (Portugal)",
+      "madridEmbassy": "Madrid: +34 91 587 2200",
+      "lisbonEmbassy": "Lissabon: +351 21 727 3300",
+      "afterHours": "Nach Geschäftsschluss: +1 888 407 4747"
+    },
+    "importance": {
+      "high": "hoch",
+      "medium": "mittel",
+      "low": "niedrig"
     }
   },
   "passport": {

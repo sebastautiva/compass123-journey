@@ -181,15 +181,193 @@
     }
   },
   "tips": {
-    "title": "Consejos y Recomendaciones del Camino",
-    "subtitle": "Consejos expertos para una peregrinación exitosa",
+    "title": "Guía del Peregrino Senior",
+    "subtitle": "Consejos esenciales para viajeros de 50+ que planean su peregrinación al Camino de Santiago.",
     "categories": {
-      "preparation": "Preparación",
-      "packing": "Equipaje",
-      "health": "Salud",
-      "safety": "Seguridad",
-      "cultural": "Cultural",
-      "spiritual": "Espiritual"
+      "packing": "Equipaje para Seniors",
+      "health": "Salud y Seguridad",
+      "safety": "Seguridad y Protección",
+      "cultural": "Consejos Culturales",
+      "language": "Español Esencial",
+      "preparation": "Preparación Pre-Viaje"
+    },
+    "packing": {
+      "essentialClothing": {
+        "title": "Ropa Esencial",
+        "content": "Empaque 3-4 cambios de ropa que absorba la humedad, incluyendo capas base de lana merino. Traiga una chaqueta y pantalones de lluvia ligeros. Empaque una capa abrigada para las noches.",
+        "importance": "alta"
+      },
+      "comfortableFootwear": {
+        "title": "Calzado Cómodo",
+        "content": "Las botas de montaña adaptadas son esenciales. Empaque 2-3 pares de calcetines que absorban la humedad y considere traer zapatos de descanso para las noches.",
+        "importance": "alta"
+      },
+      "seniorSpecificItems": {
+        "title": "Artículos Específicos para Seniors",
+        "content": "Traiga una silla de camping ligera, calcetines de compresión, plantillas extra acolchadas y una pequeña almohada para mayor comodidad al dormir.",
+        "importance": "media"
+      },
+      "medicationsHealth": {
+        "title": "Medicamentos y Salud",
+        "content": "Empaque todos los medicamentos en sus envases originales, traiga un botiquín básico de primeros auxilios y lleve copias de las recetas. Incluya suministros para tratar ampollas.",
+        "importance": "alta"
+      },
+      "electronicsDocuments": {
+        "title": "Electrónicos y Documentos",
+        "content": "Traiga un cargador portátil, adaptador universal y funda impermeable para el teléfono. Mantenga el pasaporte, tarjetas de seguro y contactos de emergencia accesibles.",
+        "importance": "media"
+      }
+    },
+    "health": {
+      "physicalPreparation": {
+        "title": "Preparación Física",
+        "content": "Comience el entrenamiento 3-6 meses antes del viaje. Aumente gradualmente hasta caminar 15-20km con su mochila. Concéntrese en fortalecer los músculos de las piernas y mejorar el cardio.",
+        "importance": "alta"
+      },
+      "managingChronicConditions": {
+        "title": "Manejo de Condiciones Crónicas",
+        "content": "Consulte a su médico antes de viajar. Asegúrese de tener suficiente medicación para todo el viaje más extra. Aprenda a decir sus condiciones en español.",
+        "importance": "alta"
+      },
+      "preventingInjuries": {
+        "title": "Prevención de Lesiones",
+        "content": "Caliente antes de caminar cada día. Use bastones de trekking para reducir el estrés en las articulaciones. Tome descansos regulares y escuche a su cuerpo.",
+        "importance": "alta"
+      },
+      "hydrationNutrition": {
+        "title": "Hidratación y Nutrición",
+        "content": "Beba agua regularmente, incluso si no tiene sed. Empaque suplementos de electrolitos. Coma comidas regulares y lleve snacks energéticos.",
+        "importance": "media"
+      },
+      "emergencyContacts": {
+        "title": "Contactos de Emergencia",
+        "content": "Programe los números de emergencia locales (112 en España/Portugal) en su teléfono. Considere comprar un seguro de viaje con cobertura médica.",
+        "importance": "alta"
+      }
+    },
+    "safety": {
+      "personalSafety": {
+        "title": "Seguridad Personal",
+        "content": "Camine en grupos cuando sea posible, especialmente en áreas urbanas. Informe a alguien de sus planes diarios. Confíe en sus instintos sobre personas y situaciones.",
+        "importance": "alta"
+      },
+      "weatherAwareness": {
+        "title": "Conciencia del Clima",
+        "content": "Revise los pronósticos del tiempo diariamente. Esté preparado para cambios repentinos en áreas montañosas. Conozca los signos de agotamiento por calor e hipotermia.",
+        "importance": "media"
+      },
+      "moneyValuables": {
+        "title": "Dinero y Objetos de Valor",
+        "content": "Use un cinturón de dinero o bolsa oculta. No lleve grandes cantidades de efectivo. Mantenga copias de documentos importantes separadas de los originales.",
+        "importance": "media"
+      },
+      "navigationSafety": {
+        "title": "Seguridad de Navegación",
+        "content": "Siempre lleve un mapa físico como respaldo. Descargue mapas sin conexión en su teléfono. Siga las flechas amarillas y marcadores oficiales.",
+        "importance": "media"
+      }
+    },
+    "cultural": {
+      "spanishCustoms": {
+        "title": "Costumbres Españolas",
+        "content": "Las comidas son más tarde que en EE.UU. (almuerzo 2-4pm, cena 9-11pm). Las tiendas cierran para la siesta (2-5pm). Las propinas no se esperan pero se aprecian.",
+        "importance": "media"
+      },
+      "religiousEtiquette": {
+        "title": "Etiqueta Religiosa",
+        "content": "Vístase modestamente al visitar iglesias. Quítese los sombreros adentro. Sea respetuoso durante los servicios religiosos. La fotografía puede estar restringida.",
+        "importance": "media"
+      },
+      "pilgrimTraditions": {
+        "title": "Tradiciones del Peregrino",
+        "content": "Diga \"Buen Camino\" a otros peregrinos. Respete la tradición de la credencial (pasaporte). Sea considerado en los albergues - despiértese silenciosamente.",
+        "importance": "media"
+      },
+      "localInteractions": {
+        "title": "Interacciones Locales",
+        "content": "Los españoles son generalmente cálidos y serviciales. Aprenda frases básicas en español. Sea paciente con las barreras del idioma.",
+        "importance": "baja"
+      }
+    },
+    "language": {
+      "basicGreetings": {
+        "title": "Saludos Básicos",
+        "content": "Hola (OH-lah) - Hola | Buenos días (BWAY-nos DEE-ahs) - Buenos días | Buenas tardes (BWAY-nas TAR-des) - Buenas tardes",
+        "importance": "alta"
+      },
+      "caminoPhrases": {
+        "title": "Frases del Camino",
+        "content": "Buen Camino (bway-n kah-MEE-no) - Buen Camino | ¿Dónde está el albergue? (DON-de es-TAH el al-BER-gay) - ¿Dónde está el albergue?",
+        "importance": "alta"
+      },
+      "emergencyPhrases": {
+        "title": "Frases de Emergencia",
+        "content": "Ayuda (ah-YOO-dah) - Ayuda | Necesito un médico (neh-seh-SEE-to oon MEH-di-ko) - Necesito un médico | No hablo español (no AH-blo es-pahn-YOHL) - No hablo español",
+        "importance": "alta"
+      },
+      "foodAccommodation": {
+        "title": "Comida y Alojamiento",
+        "content": "Una cama, por favor (OO-na KAH-ma por fah-VOR) - Una cama, por favor | La cuenta, por favor (la KWAY-n-ta por fah-VOR) - La cuenta, por favor",
+        "importance": "media"
+      }
+    },
+    "preparation": {
+      "sixMonthsBefore": {
+        "title": "6 Meses Antes",
+        "content": "Comience el programa de entrenamiento físico. Reserve vuelos y las primeras noches de alojamiento. Investigue la ruta y cree un itinerario aproximado.",
+        "importance": "alta"
+      },
+      "threeMonthsBefore": {
+        "title": "3 Meses Antes",
+        "content": "Finalice las compras de equipo y pruebe todo. Obtenga seguro de viaje. Programe un chequeo médico. Comience a aprender español básico.",
+        "importance": "alta"
+      },
+      "oneMonthBefore": {
+        "title": "1 Mes Antes",
+        "content": "Confirme todas las reservas. Empaque y pese su mochila. Arregle el cuidado del correo/mascotas. Descargue mapas y aplicaciones sin conexión.",
+        "importance": "media"
+      },
+      "oneWeekBefore": {
+        "title": "1 Semana Antes",
+        "content": "Revise el pronóstico del tiempo. Cargue todos los dispositivos. Prepare la lista de contactos de emergencia. Obtenga euros del banco.",
+        "importance": "media"
+      }
+    },
+    "weather": {
+      "title": "Guía Climática Estacional",
+      "spring": {
+        "title": "Primavera (Mar-May)",
+        "description": "15-20°C, lluvia moderada, flores silvestres floreciendo"
+      },
+      "summer": {
+        "title": "Verano (Jun-Ago)",
+        "description": "20-30°C, seco, caluroso durante el mediodía"
+      },
+      "fall": {
+        "title": "Otoño (Sep-Nov)",
+        "description": "10-20°C, lluvia creciente, colores hermosos"
+      },
+      "winter": {
+        "title": "Invierno (Dic-Feb)",
+        "description": "5-15°C, lluvia frecuente, posible nieve"
+      }
+    },
+    "emergency": {
+      "title": "Información de Emergencia",
+      "emergencyNumbers": "Números de Emergencia",
+      "usEmbassyContacts": "Contactos de la Embajada de EE.UU.",
+      "generalEmergency": "Emergencia General: 112",
+      "medicalEmergency": "Emergencia Médica: 061 (España), 112 (Portugal)",
+      "police": "Policía: 091 (España), 112 (Portugal)",
+      "fire": "Bomberos: 080 (España), 112 (Portugal)",
+      "madridEmbassy": "Madrid: +34 91 587 2200",
+      "lisbonEmbassy": "Lisboa: +351 21 727 3300",
+      "afterHours": "Fuera de horario: +1 888 407 4747"
+    },
+    "importance": {
+      "high": "alta",
+      "medium": "media",
+      "low": "baja"
     }
   },
   "passport": {

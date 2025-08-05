@@ -181,15 +181,193 @@
     }
   },
   "tips": {
-    "title": "Camino Tips & Advice",
-    "subtitle": "Expert advice for a successful pilgrimage",
+    "title": "Senior Pilgrim's Guide",
+    "subtitle": "Essential tips and advice for travelers 50+ planning their Camino de Santiago journey.",
     "categories": {
-      "preparation": "Preparation",
-      "packing": "Packing",
-      "health": "Health",
-      "safety": "Safety",
-      "cultural": "Cultural",
-      "spiritual": "Spiritual"
+      "packing": "Packing for Seniors",
+      "health": "Health & Safety",
+      "safety": "Safety & Security",
+      "cultural": "Cultural Tips",
+      "language": "Essential Spanish",
+      "preparation": "Pre-Trip Preparation"
+    },
+    "packing": {
+      "essentialClothing": {
+        "title": "Essential Clothing",
+        "content": "Pack 3-4 changes of moisture-wicking clothes, including merino wool base layers. Bring a lightweight rain jacket and pants. Pack one warm layer for evenings.",
+        "importance": "high"
+      },
+      "comfortableFootwear": {
+        "title": "Comfortable Footwear",
+        "content": "Broken-in hiking boots are essential. Pack 2-3 pairs of moisture-wicking socks and consider bringing camp shoes for evenings.",
+        "importance": "high"
+      },
+      "seniorSpecificItems": {
+        "title": "Senior-Specific Items",
+        "content": "Bring a lightweight camping chair, compression socks, extra cushioned insoles, and a small pillow for better sleep comfort.",
+        "importance": "medium"
+      },
+      "medicationsHealth": {
+        "title": "Medications & Health",
+        "content": "Pack all medications in original containers, bring a basic first aid kit, and carry copies of prescriptions. Include blister treatment supplies.",
+        "importance": "high"
+      },
+      "electronicsDocuments": {
+        "title": "Electronics & Documents",
+        "content": "Bring a portable charger, universal adapter, and waterproof phone case. Keep passport, insurance cards, and emergency contacts accessible.",
+        "importance": "medium"
+      }
+    },
+    "health": {
+      "physicalPreparation": {
+        "title": "Physical Preparation",
+        "content": "Start training 3-6 months before your trip. Build up gradually to walking 15-20km with your pack. Focus on strengthening leg muscles and improving cardio.",
+        "importance": "high"
+      },
+      "managingChronicConditions": {
+        "title": "Managing Chronic Conditions",
+        "content": "Consult your doctor before traveling. Ensure you have enough medication for the entire trip plus extra. Know how to say your conditions in Spanish.",
+        "importance": "high"
+      },
+      "preventingInjuries": {
+        "title": "Preventing Injuries",
+        "content": "Warm up before walking each day. Use trekking poles to reduce joint stress. Take regular breaks and listen to your body.",
+        "importance": "high"
+      },
+      "hydrationNutrition": {
+        "title": "Hydration & Nutrition",
+        "content": "Drink water regularly, even if not thirsty. Pack electrolyte supplements. Eat regular meals and carry energy snacks.",
+        "importance": "medium"
+      },
+      "emergencyContacts": {
+        "title": "Emergency Contacts",
+        "content": "Program local emergency numbers (112 in Spain/Portugal) into your phone. Consider purchasing travel insurance with medical coverage.",
+        "importance": "high"
+      }
+    },
+    "safety": {
+      "personalSafety": {
+        "title": "Personal Safety",
+        "content": "Walk in groups when possible, especially in urban areas. Inform someone of your daily plans. Trust your instincts about people and situations.",
+        "importance": "high"
+      },
+      "weatherAwareness": {
+        "title": "Weather Awareness",
+        "content": "Check weather forecasts daily. Be prepared for sudden changes in mountain areas. Know signs of heat exhaustion and hypothermia.",
+        "importance": "medium"
+      },
+      "moneyValuables": {
+        "title": "Money & Valuables",
+        "content": "Use a money belt or hidden pouch. Don't carry large amounts of cash. Keep copies of important documents separate from originals.",
+        "importance": "medium"
+      },
+      "navigationSafety": {
+        "title": "Navigation Safety",
+        "content": "Always carry a physical map as backup. Download offline maps on your phone. Follow yellow arrows and official waymarks.",
+        "importance": "medium"
+      }
+    },
+    "cultural": {
+      "spanishCustoms": {
+        "title": "Spanish Customs",
+        "content": "Meals are later than in the US (lunch 2-4pm, dinner 9-11pm). Shops close for siesta (2-5pm). Tipping is not expected but appreciated.",
+        "importance": "medium"
+      },
+      "religiousEtiquette": {
+        "title": "Religious Etiquette",
+        "content": "Dress modestly when visiting churches. Remove hats inside. Be respectful during religious services. Photography may be restricted.",
+        "importance": "medium"
+      },
+      "pilgrimTraditions": {
+        "title": "Pilgrim Traditions",
+        "content": "Say \"Buen Camino\" to fellow pilgrims. Respect the credencial (passport) tradition. Be considerate in albergues - wake up quietly.",
+        "importance": "medium"
+      },
+      "localInteractions": {
+        "title": "Local Interactions",
+        "content": "Spanish people are generally warm and helpful. Learn basic Spanish phrases. Be patient with language barriers.",
+        "importance": "low"
+      }
+    },
+    "language": {
+      "basicGreetings": {
+        "title": "Basic Greetings",
+        "content": "Hola (OH-lah) - Hello | Buenos días (BWAY-nos DEE-ahs) - Good morning | Buenas tardes (BWAY-nas TAR-des) - Good afternoon",
+        "importance": "high"
+      },
+      "caminoPhrases": {
+        "title": "Camino Phrases",
+        "content": "Buen Camino (bway-n kah-MEE-no) - Good Way | ¿Dónde está el albergue? (DON-de es-TAH el al-BER-gay) - Where is the hostel?",
+        "importance": "high"
+      },
+      "emergencyPhrases": {
+        "title": "Emergency Phrases",
+        "content": "Ayuda (ah-YOO-dah) - Help | Necesito un médico (neh-seh-SEE-to oon MEH-di-ko) - I need a doctor | No hablo español (no AH-blo es-pahn-YOHL) - I don't speak Spanish",
+        "importance": "high"
+      },
+      "foodAccommodation": {
+        "title": "Food & Accommodation",
+        "content": "Una cama, por favor (OO-na KAH-ma por fah-VOR) - A bed, please | La cuenta, por favor (la KWAY-n-ta por fah-VOR) - The bill, please",
+        "importance": "medium"
+      }
+    },
+    "preparation": {
+      "sixMonthsBefore": {
+        "title": "6 Months Before",
+        "content": "Start physical training program. Book flights and first few nights accommodation. Research route and create rough itinerary.",
+        "importance": "high"
+      },
+      "threeMonthsBefore": {
+        "title": "3 Months Before",
+        "content": "Finalize gear purchases and test everything. Get travel insurance. Schedule medical check-up. Start learning basic Spanish.",
+        "importance": "high"
+      },
+      "oneMonthBefore": {
+        "title": "1 Month Before",
+        "content": "Confirm all bookings. Pack and weigh your backpack. Arrange for mail/pet care. Download offline maps and apps.",
+        "importance": "medium"
+      },
+      "oneWeekBefore": {
+        "title": "1 Week Before",
+        "content": "Check weather forecast. Charge all devices. Prepare emergency contact list. Get euros from bank.",
+        "importance": "medium"
+      }
+    },
+    "weather": {
+      "title": "Seasonal Weather Guide",
+      "spring": {
+        "title": "Spring (Mar-May)",
+        "description": "15-20°C, moderate rain, wildflowers blooming"
+      },
+      "summer": {
+        "title": "Summer (Jun-Aug)",
+        "description": "20-30°C, dry, hot during midday"
+      },
+      "fall": {
+        "title": "Fall (Sep-Nov)",
+        "description": "10-20°C, increasing rain, beautiful colors"
+      },
+      "winter": {
+        "title": "Winter (Dec-Feb)",
+        "description": "5-15°C, frequent rain, snow possible"
+      }
+    },
+    "emergency": {
+      "title": "Emergency Information",
+      "emergencyNumbers": "Emergency Numbers",
+      "usEmbassyContacts": "US Embassy Contacts",
+      "generalEmergency": "General Emergency: 112",
+      "medicalEmergency": "Medical Emergency: 061 (Spain), 112 (Portugal)",
+      "police": "Police: 091 (Spain), 112 (Portugal)",
+      "fire": "Fire: 080 (Spain), 112 (Portugal)",
+      "madridEmbassy": "Madrid: +34 91 587 2200",
+      "lisbonEmbassy": "Lisbon: +351 21 727 3300",
+      "afterHours": "After hours: +1 888 407 4747"
+    },
+    "importance": {
+      "high": "high",
+      "medium": "medium",
+      "low": "low"
     }
   },
   "passport": {
