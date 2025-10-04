@@ -39,7 +39,7 @@ export const HomePage: React.FC = () => {
     {
       icon: Clock,
       title: 'Flexible Pacing',
-      description: 'Customize your journey with rest days and comfortable daily distances that suit your needs.',
+      description: 'Customize yourxxxxxxxxxx journey with rest days and comfortable daily distances that suit your needs.',
       color: 'text-amber-600'
     },
     {
